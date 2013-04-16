@@ -1,0 +1,24 @@
+git init 
+		initialize git to folder that you are in
+		
+git remote -v
+		see any remotes you have, if you dont have any, add them
+		
+git remote add origin git@github.com:USERNAME/REPO.git
+		add an origin
+		
+git remote -v to check remote
+
+git pull origin master
+		must pull old code into a new folder before new code can be copied to git.
+		so, make a folder called "OLD" and pull into it, copy the new code into the 
+		"OLD" folder to overwrite the old files and THEN push the changes (push is coming)
+
+git add .
+		add modified files to stage
+
+git commit -m "MESSAGE HERE"
+		commit the changes on the stage and enter a message for why the commit
+
+git push origin master
+		push changes to origin
