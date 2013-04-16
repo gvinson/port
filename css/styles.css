@@ -22,6 +22,7 @@ img { border: none; }
 	border-bottom: 2px solid #dd4b39;
 	background-color: #e5e5e5;	
 	background: url("../img/vertStripe.png") top left repeat #ddd;
+	outline: 1px solid transparent; /*added to remove phantom lines in chrome after animate */
 }
 #contactWrapper h3 {
 	color: #4a4a4a; 
