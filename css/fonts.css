@@ -46,13 +46,21 @@ src:url(data:font/opentype;base64,d09GRgABAAAAAEmEABIAAAAAnGAAAAAAAAAAAAAAAAAAAA
 font-style:italic;
 font-weight:500;
 }
-@font-face {
+
+/*Utilized Fonts*/
+@font-face {	/* 'THE WEB' in actions slider font */
 	font-family: 'Bebas';
-	src: url('fonts/BebasNeue-webfont.eot');
-	src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('fonts/BebasNeue-webfont.woff') format('woff'),
-		 url('fonts/BebasNeue-webfont.ttf') format('truetype'),
-		 url('fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
-	font-weight: normal;
-	font-style: normal;
+	src: url('fonts/Bebas/BebasNeue-webfont.eot');
+	src: url('fonts/Bebas/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/Bebas/BebasNeue-webfont.woff') format('woff'),
+		 url('fonts/Bebas/BebasNeue-webfont.ttf') format('truetype'),
+		 url('fonts/Bebas/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+}
+@font-face { 	/* Grant Vinson, web do-er and sliding actions font */
+	font-family: 'Kelly Slab';
+	src: url("fonts/Kelly_Slab/KellySlab.ttf") format('truetype');
+}
+@font-face {	/* Paragraph font */
+	font-family: 'Open Sans';
+	src: url('fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype'); 
 }

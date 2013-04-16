@@ -1,26 +1,28 @@
+/****************************************************
+* ie7script.js
+*
+*
+*
+****************************************************/
 $(document).ready(function() {
-	
 	var contactShow = false; //if contact window is shown or not
-	
-	//Fade in logo and top nav on page load 
-	$("#header").fadeIn('slow');
 	
 	//Top Navigation Click Functions
 	$("#topNav #contact").click(function() {
 		if(!contactShow) {
 			$("#contactWrapper").animate({
 				'top':'0px'
-			}, 300);
+			}, 500);
 			contactShow = true;
 		}
 		else {
 			$("#contactWrapper").animate({
 				'top':'-320px'
-			}, 200);
+			}, 500);
 			contactShow = false;
 		}
 	});
-	
+
 	//Close button hover img swap
 	$("#close img").hover(function() {
 		$(this).attr("src", $(this).attr("src").replace("_off.png","_on.png"));
@@ -61,30 +63,16 @@ $(document).ready(function() {
 	var actionHeight = $("#actions").height();
 	
 	function slide() {
-		$("#actions div").animate({
-			"position":"absolute",
-			"margin-top":"+=10px"
-		},{
-			"duration":300,
-			"complete":function () {
-				$(this).css({
-					"margin-top":"-=10px"
-				});
-			},
-			"easing":"easeInExpo"
-		}
-		); 
-		$("#actions div:first").slideUp({
-			"duration":200, 
+		$("#actions div:first").fadeIn({
 			"complete": function() {
 				var $this = $(this);
 				$this.parent().append(this);
 				$this.show();
 				$("#actions").css({
-					"height": $this.height()+10
+					"height": $this.height() + "!important",
+					"width":$this.parent().width()
 				});
-			},
-			"easing":"easeOutExpo"
+			}
 		}); 
 	}
 	

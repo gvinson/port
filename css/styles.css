@@ -4,7 +4,7 @@ body { padding: 0; margin: 0; background-color: #fdfdfd; text-shadow: 1px 1px 0p
 p, .postDate { text-shadow: none !important; }
 img { border: none; }
 #wrapper {
-	width: 60em;
+	width: 960px;
 	margin: 0 auto;
 	font-size: 100%;
 	padding-top: 5px;
@@ -57,17 +57,17 @@ img { border: none; }
 	-moz-transition: all .25s ease-in-out;
 	-o-transition: all .25s ease-in-out;
 	transition: all .25s ease-in-out;
+	text-shadow: 1px 1px 1px #fff;
 }
 #contactWidth a:hover {
-	text-shadow: rgb(189, 189, 189) 2px 2px 2px;
+	text-shadow: 2px 2px 2px #bdbdbd !important;
 	color: #333;
-	background-color: rgb(235, 255, 0);
+	background-color: #ebff00;
 }
 .contactAction {
 	letter-spacing: 1px;
 	color: #6a6a6a;
 	font-family: 'Bebas';
-	
 	color: #3c3c3c;
 	text-shadow: 2px 2px 2px #bbb;
 	font-size: 1.25em;
@@ -82,12 +82,10 @@ img { border: none; }
 }
 #contactLang {
 	color: #6a6a6a; 
-	text-shadow: 1px 1px 1px #fff;
 	font-family: 'Bebas'; 
 	letter-spacing: 1px;
 	font-size: 1.75em;
 	font-weight: 700;
-	
 	color: #3c3c3c;
 	text-shadow: 2px 2px 2px #aaa;
 }
@@ -169,7 +167,7 @@ div.contactInfo img {
 }
 #logo #logoTag {
 	font-size: .5em;
-	line-height: 8px;
+	line-height: .6em;
 	text-align: right;
 	text-shadow: none;
 	color: #aaa;
@@ -185,24 +183,33 @@ div.contactInfo img {
 	margin: 0 auto;
 	margin-top: 5em;
 }
+.post .dateWrapper {
+	float: left;
+}
+.post .contentWrapper {
+	margin-left: 25px;
+}
 .postDate {
+	height: 50px !important;
 	border: 3px solid #dd4b39;
 	color: #dd4b39;
 	font-weight: bold;
-	height: 50px;
 	padding: 12px 8px;
-	margin: 2px 15px 0 -25px;
 	font-size: 1.25em;
 }
 .postTitle {
 	display: inline;
 	margin-top: -20px;
+	margin-left: 15px;
 	position: absolute;
 }
 .postContent {
-	font-family: Times New Roman;
+	font-family: 'Helvetica', Arial, sans-serif;
+	font-size: 1em;
+	line-height: 130%;
 	margin-left: 65px;
-	margin-top: -2px;
+	padding-top: 20px;
+	width: 655px;
 }
 .actionsWrapper {
 	display: inline-block;
@@ -245,7 +252,9 @@ animation:slideInRight 400ms;
 -webkit-animation:slideInRight 400ms ease-out 1; /* Safari and Chrome */
 -o-animation:slideInRight 400ms; /* Opera */
 }
-
+#header {
+display: none;
+}
 /*************************************
 	Page Load Animations
 ************************************/
