@@ -172,8 +172,11 @@ img { border: none; }
 	clear: both;
 	zoom: 1;
 }
+#contentWrapper {
+	margin-left: -6em;
+}
 .post {
-	width: 90%;
+	width: 75%;
 	margin: 0 auto;
 	margin-top: 5.5em;
 }

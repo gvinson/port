@@ -10,7 +10,7 @@ $(document).ready(function() {
 		var img = $(this).children('a').children("img");
 		$(img).css("opacity",".75");
 		$(this).parent().prepend('<li class="topNavText" style="margin-left:-'+($(textDiv).width()+25)+'px;">'+text+'</div>');
-		$(".topNavText").fadeIn('fast');
+		$(".topNavText").fadeIn();
 	}, function() {
 		var text = $(this).children('a').children("div");
 		var img = $(this).children('a').children("img");		
