@@ -1,71 +1,25 @@
 <html>
 <head>
 <title>Grant Vinson</title>
-<link rel="stylesheet" href="css/styles.css"></link>
 <link rel="stylesheet" href="css/normalize.css"></link>
-<link rel="stylesheet" href="css/fonts.css"></link>
+<link rel="stylesheet" href="css/fonts/fonts.css"></link>
+<link rel="stylesheet" href="css/styles.css"></link>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
-<!--[if gte IE 9]>
-  <style type="text/css">
-    .gradient {
-       filter: none;
-    }
-  </style>
+<script type="text/javascript" src="js/color.js"></script>
+<!--[if IE]>
+	<style type="text/css"> #saying { margin: 1.5em 0;} </style>
 <![endif]-->
 <!--[if lte IE 7]>
-	<style type="text/css">
-		#topNav {
-			overflow-x: hidden !important;
-		}
-		.postTitle {
-			margin-left: 0px;
-			margin-top: -30px;
-		}
-		#saying {
-			margin-bottom: 0em !important;
-			width: 960px;
-			overflow: hidden;
-			text-align: left;
-		}
-		.actionsWrapper {
-			width: 960px;
-			margin-left: -100px;
-		}
-		#topNav ul li a div {
-			display: none !important;
-		}
-		#contactWidth {
-			padding-bottom: 15px;
-		}
-		.post {
-			margin-top: 1.5em !important;
-		}
-		.dateWrapper { 
-			float: none !important;
-			width: auto !important;
-			height: auto !important;
-		}
-		#actions div {
-			text-align: right !important;
-			float: right;
-			clear: both;
-			zoom: 1;
-			height: 1.5em !important;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="css/ie7.css"></link>
 	<script type="text/javascript" src="js/ie7script.js"></script>
-<![endif]-->
-<!--[if IE]>
-	<style type="text/css">
-		#saying {
-			margin: 1.5em 0;
-		}
-	</style>
 <![endif]-->
 <![if !IE 7]>
 	<script type="text/javascript" src="js/script.js"></script>
 <![endif]>
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 </head>
 
 <body>
@@ -87,9 +41,9 @@
 		<img src="img/slideButton_off.png">
 	</div>
 </div>
-<div id="topBorder"></div>
-<div id="wrapper">
-	<header id="header">
+
+<div id="headerWrapper">
+		<header id="header">
 		<div id="logo">
 			Grant Vinson
 			<div id="logoTag">
@@ -98,13 +52,15 @@
 		</div>
 		<nav id="topNav">
 			<ul>
-				<li><a href="#"><img src="img/icons/home_off.png"><div>Hello</div></a></li>
+				<li id="home"><a href="#"><img src="img/icons/port.png"><div>Work</div></a></li>
 				<li><a href="#"><img src="img/icons/blog_off.png"><div>Blog</div></a></li>
 				<li><a id="contact" href="#"><img src="img/icons/contact_off.png"><div style="margin-left: -10px;">Contact</div></a></li>
 			</ul>
 		</nav>
-	</header>
-	<div class="clear" style="padding-top: 2em;"></div>
+		</header>
+	</div>
+<div id="wrapper">
+	<div class="clear" style="padding-top: 2em;"></div>	
 	<div id="saying">
 		<div class="actionsWrapper">
 			<div id="theWeb">
@@ -123,7 +79,32 @@
 	
 	<div class="post">
 		<div class="dateWrapper">
-			<span class="postDate">05/02</span>
+			<div class="postDate">05/02</div>
+		</div>
+		<div class="contentWrapper">
+		<h2 class="postTitle">This is my first post!</h2>
+		<p class="postContent">
+			Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+		</p>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div class="post">
+		<div class="postDate">05/02</div>
+
+		<div class="contentWrapper">
+		<h2 class="postTitle">This is my first post!</h2>
+		<p class="postContent">
+			Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+		</p>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div class="post">
+		<div class="dateWrapper">
+			<div class="postDate">05/02</div>
 		</div>
 		<div class="contentWrapper">
 		<h2 class="postTitle">This is my first post!</h2>
@@ -136,7 +117,7 @@
 	
 	<div class="post">
 		<div class="dateWrapper">
-			<span class="postDate">05/02</span>
+			<div class="postDate">05/02</div>
 		</div>
 		<div class="contentWrapper">
 		<h2 class="postTitle">This is my first post!</h2>
@@ -149,7 +130,7 @@
 	
 	<div class="post">
 		<div class="dateWrapper">
-			<span class="postDate">05/02</span>
+			<div class="postDate">05/02</div>
 		</div>
 		<div class="contentWrapper">
 		<h2 class="postTitle">This is my first post!</h2>

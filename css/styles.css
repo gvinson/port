@@ -1,6 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Kelly+Slab);
-
-body { padding: 0; margin: 0; background-color: #fdfdfd; text-shadow: 1px 1px 0px rgba(0,0,0,0.2); }
+body { 
+	padding: 0; 
+	margin: 0; 
+	background-color: #fdfdfd; 
+	text-shadow: 1px 1px 0px rgba(0,0,0,0.2); 
+	font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', Arial, sans-serif; 
+	font-weight: 400;  
+}
 p, .postDate { text-shadow: none !important; }
 img { border: none; }
 #wrapper {
@@ -13,13 +19,12 @@ img { border: none; }
 	box-sizing: border-box; 
 	font-family: Helvetica, Arial, sans-serif;
 }
-
 #contactWrapper {
 	position: fixed;
 	z-index: 50;
 	width: 100%;
 	top: -320px;
-	border-bottom: 2px solid #dd4b39;
+	border-bottom: 3px solid #dd4b39;
 	background-color: #e5e5e5;	
 	background: url("../img/vertStripe.png") top left repeat #ddd;
 	outline: 1px solid transparent; /*added to remove phantom lines in chrome after animate */
@@ -33,7 +38,8 @@ img { border: none; }
 	width: 27%;
 }
 #contactWidth {
-	width: 800px; 
+	width: 30%;
+	min-width: 800px; 
 	margin: 0 auto;
 	padding-bottom: 35px;
 	margin-top: 15px;
@@ -99,33 +105,6 @@ img { border: none; }
 #contactWrapper #close:hover {
 	cursor: pointer;
 }
-
-.border {
-	float: left;
-	display: inline;
-	width: 34%;
-	border-top: 1px solid #999;
-	position: relative;
-	top: .5em;
-}
-div.contactInfo p {
-	margin: 5px;
-	color: #4a4a4a; 
-	text-shadow: 1px 1px 1px #fff; 
-	font-size: 1em; 
-	font-weight: bold;
-}
-div.contactInfo img {
-	margin-right: 8px;
-}
-.map .mapFrame {
-	border: .5em solid #fdfdfd;
-}
-#topBorder {
-	margin: 0 auto;
-	height: 3px;
-	background-color: #dd4b39;
-}
 #topNav {
 	padding-top: 0px;
 	display: block;
@@ -135,13 +114,16 @@ div.contactInfo img {
 }
 #topNav ul {
 	float: right;
-	margin-top: 4px;
 	list-style: none;
+	margin-right: 5em;
 }
 #topNav ul li {
 	float: left;
 	margin-left: 3em;
 	text-align: center;
+}
+#topNav #home {
+	margin-left: 1.5em !important;
 }
 #topNav ul li a {
 	color: #aaa;
@@ -154,10 +136,21 @@ div.contactInfo img {
 #topNav ul li a:hover {
 	color: #aaa;
 	text-decoration: none;
-	 text-shadow: 2px 1px 3px #aaa; 
+	text-shadow: 2px 1px 3px #aaa; 
 }
 #topNav ul li a div {
 	display: none;
+}
+.topNavText {
+	position: absolute; 
+	display: none; 
+	height: 50%; 
+	line-height: 150%; 
+	text-align: right;
+	font-family: 'Bebas';
+	font-size: 2em;
+	color: #aaa;
+	text-shadow: 2px 2px 1px #fff !important;
 }
 #logo {
 	font-family: 'Kelly Slab';
@@ -180,37 +173,33 @@ div.contactInfo img {
 	zoom: 1;
 }
 .post {
-	width: 75%;
+	width: 90%;
 	margin: 0 auto;
-	margin-top: 5em;
-}
-.post .dateWrapper {
-	float: left;
+	margin-top: 5.5em;
 }
 .post .contentWrapper {
 	margin-left: 25px;
 }
 .postDate {
-	height: 50px !important;
 	border: 3px solid #dd4b39;
 	color: #dd4b39;
 	font-weight: bold;
 	padding: 12px 8px;
 	font-size: 1.25em;
+	float: left;
+	margin-right: 15px;
 }
 .postTitle {
 	display: inline;
-	margin-top: -20px;
-	margin-left: 15px;
-	position: absolute;
+	
+	position: relative;
+	top: -5px;
 }
 .postContent {
-	font-family: 'Helvetica', Arial, sans-serif;
+	font-family: 'Open Sans', 'Helvetica', Arial, sans-serif;
 	font-size: 1em;
-	line-height: 130%;
+	line-height: 170%;
 	margin-left: 65px;
-	padding-top: 20px;
-	width: 655px;
 }
 .actionsWrapper {
 	display: inline-block;
@@ -226,7 +215,7 @@ div.contactInfo img {
 	text-align: center;
 	color: #aaa;
 	font-family: 'Kelly Slab';
-	margin: 1em 0 2em -1em;
+	margin: 1em 0 2em -.5em;
 }
 /* Apply Animations */
 #saying #the {
@@ -245,7 +234,9 @@ animation:slideInLeft 400ms;
 -o-animation:slideInLeft 400ms; /* Opera */
 margin-right: .3em;	
 }
-
+#saying #web:hover {
+	transform: translate3d(0px, 0px, -350px) rotate3d(1, 0, 0, 90deg);
+}
 #saying #web { 
 position: relative;
 animation:slideInRight 400ms;
@@ -253,8 +244,17 @@ animation:slideInRight 400ms;
 -webkit-animation:slideInRight 400ms ease-out 1; /* Safari and Chrome */
 -o-animation:slideInRight 400ms; /* Opera */
 }
+#headerWrapper {
+	background-color: #fff;
+	padding: 7px 3px;
+	padding-bottom: 0;
+	z-index: 45;
+	border-top: 3px solid #dd4b39;
+}
 #header {
-display: none;
+	width: 71.5%;
+	min-width: 960px;
+	margin: 0 auto;
 }
 /*************************************
 	Page Load Animations

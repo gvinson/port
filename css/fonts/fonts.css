@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('opensans-regular-webfont.eot');
+    src: url('opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('opensans-regular-webfont.woff') format('woff'),
+         url('opensans-regular-webfont.ttf') format('truetype'),
+         url('opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Kelly Slab';
+    src: url('kellyslab-webfont.eot');
+    src: url('kellyslab-webfont.eot?#iefix') format('embedded-opentype'),
+         url('kellyslab-webfont.woff') format('woff'),
+         url('kellyslab-webfont.ttf') format('truetype'),
+         url('kellyslab-webfont.svg#kelly_slabregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Bebas';
+    src: url('bebasneue-webfont-webfont.eot');
+    src: url('bebasneue-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('bebasneue-webfont-webfont.woff') format('woff'),
+         url('bebasneue-webfont-webfont.ttf') format('truetype'),
+         url('bebasneue-webfont-webfont.svg#bebas_neueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

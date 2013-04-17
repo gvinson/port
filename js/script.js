@@ -2,11 +2,29 @@ $(document).ready(function() {
 	
 	var contactShow = false; //if contact window is shown or not
 	
-	//Fade in logo and top nav on page load 
-	$("#header").fadeIn('slow');
+	//top nav img hovers
+	$("#topNav ul li").hover(function() {
+		$(".topNavText").remove();
+		var textDiv = $(this).children('a').children('div');
+		var text = $(textDiv).text();
+		var img = $(this).children('a').children("img");
+		$(img).css("opacity",".75");
+		$(this).parent().prepend('<li class="topNavText" style="margin-left:-'+($(textDiv).width()+25)+'px;">'+text+'</div>');
+		$(".topNavText").fadeIn('fast');
+	}, function() {
+		var text = $(this).children('a').children("div");
+		var img = $(this).children('a').children("img");		
+		$(img).css("opacity","1");
+		$(".topNavText").fadeOut({
+			"complete": function(){
+					$(this).remove();
+			}
+		});
+	});
 	
 	//Top Navigation Click Functions
-	$("#topNav #contact").click(function() {
+	$("#topNav #contact").click(function(e) {
+		e.preventDefault();
 		if(!contactShow) {
 			$("#contactWrapper").animate({
 				'top':'0px'
@@ -20,7 +38,7 @@ $(document).ready(function() {
 			contactShow = false;
 		}
 	});
-	
+		
 	//Close button hover img swap
 	$("#close img").hover(function() {
 		$(this).attr("src", $(this).attr("src").replace("_off.png","_on.png"));
@@ -38,19 +56,6 @@ $(document).ready(function() {
 				'top':'-320px'
 			}, 200);
 		contactShow = false;
-	});
-
-	//top nav img hovers
-	$("#topNav ul li").hover(function() {
-		var text = $(this).children('a').children("div");
-		var img = $(this).children('a').children("img");
-		$(text).css("position","absolute").slideDown('fast');
-		$(img).css("opacity",".75");
-	}, function() {
-		var text = $(this).children('a').children("div");
-		var img = $(this).children('a').children("img");
-		$(text).slideUp('fast');
-		$(img).css("opacity","1");
 	});
 	
 	//Sliding Actions for "the web"
@@ -114,19 +119,17 @@ $(document).ready(function() {
 	});
 
 	$.each(fontsUsed, function(i, el){
-		if($.inArray(el, fontsAvail) === -1) fontsAvail.push(el);
+		if($.inArray(el, fontsAvail) === -1) 
+		{
+			fontsAvail.push(el);
+		}
 	});
 
 	function loadFont() {
-
 	$(document).click(function(e) {
 		if(activateFonts) {
 			e.preventDefault();
-			
-			console.log("Document clicked");
-			
 			var target = $(e.target);
-			//mylist.options[mylist.selectedIndex].text;
 			var list = document.getElementById("fontList");
 			$(target).css("font-family",list.options[list.selectedIndex].text);
 		}
