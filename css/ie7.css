@@ -1,0 +1,43 @@
+#headerWrapper {
+	overflow-x: hidden !important;
+	width: 99.7%;
+	margin: 0 auto;
+}
+#saying {
+	margin-bottom: 0em !important;
+	width: 960px;
+	overflow: hidden;
+	text-align: left;
+}
+.actionsWrapper {
+	width: 960px;
+	margin-left: -100px;
+}
+#topNav ul li a div {
+	display: none !important;
+}
+#contactWidth {
+	padding-bottom: 15px;
+}
+.post {
+	margin-top: 1.5em !important;
+}
+.dateWrapper { 
+	float: none !important;
+	width: auto !important;
+	height: auto !important;
+}
+#actions div {
+	text-align: right !important;
+	float: right;
+	clear: both;
+	zoom: 1;
+	height: 1.5em !important;
+}
+#headerWrapper {
+	position: static;
+}
+#header {
+	width: 960px !important;
+	margin: 0 auto;
+}
