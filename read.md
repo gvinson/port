@@ -1,6 +1,6 @@
 ::::::::::::::::::::::::::::::::::::TO-DO LIST:::::::::::::::::::::::::::::::::::::::
 
-1.  Change verbage above phone number to "send me a text at" or "text me now at/@"
+1.  CREATE modal and popover for email
 
 2.  Create modal popup for form to send email and text message. your text msg email
 	email address is 1234567890@vtext.com where those numbers are your phone number.

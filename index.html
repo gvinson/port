@@ -7,15 +7,18 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
 <!--[if IE]>
-	<style type="text/css"> #saying { margin: 1.5em 0;} </style>
+	<style type="text/css"> 
+		#saying { margin: 1.5em 0;} 
+		.popover #sendText #countdown,
+		#modal_countdown {
+			width: 96.5%;
+		}
+	</style>
 <![endif]-->
+<script type="text/javascript" src="js/script.js"></script>
 <!--[if lte IE 7]>
 	<link rel="stylesheet" type="text/css" href="css/ie7.css"></link>
-	<script type="text/javascript" src="js/ie7script.js"></script>
 <![endif]-->
-<![if !IE 7]>
-	<script type="text/javascript" src="js/script.js"></script>
-<![endif]>
 <!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -30,7 +33,19 @@
 		</div>
 		<div class="rightSide">
 			<div class="contactAction">text me at</div>
-			<div class="contactLink"><a href="#">405.641.5015</a></div>
+			<div class="contactLink">
+				<a href="#" id="phoneNumber">405.641.5015</a>
+				<div class="popover right" id="textMessageWrapper">
+					<div class="arrow"></div>
+					<div id="sendText">
+						<input id="sendersNumber" class="empty" type="text" value="Your email or cell #"></input>
+						<textarea id="textMessage" class="empty" cols="50" rows="4" wrap="hard">Text Message....</textarea>
+						<div id="countdown">160</div>
+						<img src="img/sendText.png" id="sendTextImg" alt="Send me a text" />
+						<span id="result">Sent!</span>
+					</div>
+                </div>
+			</div>
 			<div class="contactAction">email me at</div>
 			<div class="contactLink"><a href="mailto:vinsongrant@gmail.com">vinsongrant@gmail.com</a></div>
 		</div>
@@ -142,6 +157,20 @@
 	</article>
 	<div id="footer">
 		<input type="button" value="SELECT" id="selectDOM" />
+	</div>
+</div>
+
+<div id="modalWrapper">
+	<div id="modal">
+		<div id="modal_sendText">
+			<div id="modalHeader">Text Me</div>
+			<input id="modal_sendersNumber" class="empty" type="text" value="Your email"></input>
+			<textarea id="modal_textMessage" class="empty" cols="50" rows="4" wrap="hard">Message for me...</textarea>
+			<div id="modal_countdown">160</div>
+			<img src="img/sendText.png" id="modal_sendTextImg" alt="Send me a text" />
+			<span id="modal_result">Sent!</span>
+			<div class="clear"></div>
+		</div>
 	</div>
 </div>
 </body>

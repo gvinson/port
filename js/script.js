@@ -1,7 +1,10 @@
 $(document).ready(function() {
 	
-	var contactShow = false; //if contact window is shown or not
-	
+	var contactShow = false,//if contact window is shown or not
+		modalShow = false, 	//if modal window is shown or not
+		popoverShow = false, 	//if popover showing or not
+		curVal;				//used for current value for textboxes
+		
 	//top nav img hovers
 	$("#topNav ul li").hover(function() {
 		$(".topNavText").remove();
@@ -39,15 +42,44 @@ $(document).ready(function() {
 		}
 	});
 		
-	//Close button hover img swap
-	$("#close img").hover(function() {
+	//Phone number clicked to send a text
+	//Show popover
+	$(".contactLink #phoneNumber").click(function(e) {
+		if(popoverShow) {
+			popoverShow = false;
+			$("#textMessageWrapper").slideUp('fast');
+		}
+		else {
+			popoverShow = true;
+			$("#textMessageWrapper").fadeIn('fast');
+		}
+		e.stopPropagation();
+	});
+	
+	//Close modal if document is clicked outside of modal
+	$(document).mousedown(function (e) {
+        var modalWrapper = $("#modalWrapper"), //modal
+			popoverWrapper = $(".popover"); //popover
+		
+        if (modalWrapper.has(e.target).length === 0) {
+            $(modalWrapper).fadeOut('fast');
+            modalShow = false;
+        }
+		if (popoverWrapper.has(e.target).length === 0) {
+            $(popoverWrapper).fadeOut('fast');
+            popoverShow = false;
+        }
+    });
+	
+	//Contact close button hover img swap
+	$("#contactWrapper #close img").hover(function() {
 		$(this).attr("src", $(this).attr("src").replace("_off.png","_on.png"));
 	}, function() {
 		$(this).attr("src", $(this).attr("src").replace("_on.png","_off.png"));
 	});
 	
-	//Close button click on contact form
-	$("#close img").click(function () {
+	//Contact close button click on contact form
+	$("#contactWrapper #close img").click(function () {
 		$("#contactWrapper").animate({
 			'padding-top':'+=35px'
 		}, 100);
@@ -58,6 +90,31 @@ $(document).ready(function() {
 		contactShow = false;
 	});
 	
+	//set the default text for textboxes and inputs
+    $('input, textarea').focus(function () {
+		curVal = $(this).val();
+        //Check val default input
+        if (
+				(curVal == 'Your email or cell #') || (curVal == 'Your email') || 
+				(curVal == 'Text Message....') || (curVal == 'Message for me...')
+		) {
+            $(this).val('');
+        }
+		$(this).css({
+			"font-style":"normal",
+			"color":"#000"
+		});
+    }).blur(function () {
+        //check for empty input
+        if ($(this).val() == '') {
+            $(this).val(curVal);
+			$(this).css({
+				"font-style":"italic",
+				"color":"#999"
+			});
+        }
+    });
+		
 	//Sliding Actions for "the web"
 	$("#actions").css({
 		"height": $("#actions div:first").height()+14,
@@ -92,8 +149,34 @@ $(document).ready(function() {
 			"easing":"easeOutExpo"
 		}); 
 	}
-	
+	//set time for action slides (2.5 secs)
 	setInterval(slide,2500);
+	
+	//Monitor text message size
+	$("#textMessage, #modal_textMessage").keypress(function(e) {
+		checkLength($(this),e);
+	});
+	$("#textMessage, #modal_textMessage").change(function(e) {
+		checkLength($(this),e);
+	});
+	function checkLength(textarea,e) {
+		var tval = $(textarea).val(),
+			tlength = tval.length,
+			set = 160,
+			remain = parseInt(set - tlength),
+			countdown = $("#countdown");
+		
+		//check to see if modal is active or popover
+		if($(textarea).attr("id") == "modal_textMessage")
+				countdown = $("#modal_countdown");
+		
+		//shorten text to allotted amount
+		$(countdown).text(remain);
+		if (remain <= 0 && e.which !== 0 && e.charCode !== 0) {
+			$(textarea).val((tval).substring(0, set-1))
+			$(countdown).prepend('<span class="error">No more characters allowed</span>');
+		}
+	}
 	
 	/* FONT SELECTOR PLUG IN */
 	var activateFonts = false;

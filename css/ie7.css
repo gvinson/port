@@ -41,3 +41,11 @@
 	width: 960px !important;
 	margin: 0 auto;
 }
+#logoTag {
+	line-height: .7em !important;
+}
+.popover {
+	position: absolute !important;
+	margin-left: 0%;
+	margin-top: -25px !important;
+}
