@@ -259,9 +259,9 @@ animation:slideInRight 400ms;
 	min-width: 960px;
 	margin: 0 auto;
 }
-#modalWrapper
+.modalWrapper
 {
-	display: none;
+	display: block;
     position:absolute;
     width:100%;
     height:100%;
@@ -271,7 +271,7 @@ animation:slideInRight 400ms;
     text-align:center;
     vertical-align:middle;
 }
-#modal
+.modal
 {
     position:absolute;
     z-index:101;
@@ -293,7 +293,7 @@ animation:slideInRight 400ms;
 	border: 1px solid #bbb;
 	background-color: #eee;
 }
-#modalHeader {
+.modalHeader {
 	text-align: left;
 	margin-left: 8px;
 	margin-bottom: 5px;
@@ -301,7 +301,7 @@ animation:slideInRight 400ms;
 	text-shadow: none;
 	font-family: 'Bebas';
 }
-#modal_sendText input, #modal_sendText textarea {
+.modalPadding input, .modalPadding textarea {
 	width: 95%;
 	padding: 3px;
 	display: block;
@@ -309,7 +309,7 @@ animation:slideInRight 400ms;
 	margin: 0 auto;
 	border: none;
 }
-#modal_textMessage {
+.modalPadding textarea {
 	margin: 10px auto !important;
 	border-bottom: 2px dotted #e0e0e0;
 	overflow: hidden;
@@ -331,15 +331,15 @@ animation:slideInRight 400ms;
 	font-size: .8em;
 	font-style: italic;
 }
-#modal_sendTextImg {
+.sendMessage {
 	width: 25px;
 	float: right;
 	margin: 15px 5px 0 15px;
 }
-#modal_sendTextImg:hover {
+.sendMessage:hover {
 	cursor: pointer;
 }
-#modal_result {
+.result {
 	float: right;
 	color: #dd4b39;
 	text-shadow: none;
@@ -406,12 +406,12 @@ animation:slideInRight 400ms;
 	max-width: 95%;
 	min-width: 95%;
 }
-.popover #sendText {
+.popover #sendText, .popover #sendEmail {
 	padding: 8px 5px;
 	border: none;
 	text-align: center;
 }
-.popover #sendText #textMessage {
+.popover #sendText #textMessage, .popover #sendEmail #emailMessage {
 	margin: 10px auto;
 	border: 1px solid #aaa;
 	border-bottom: none;
@@ -440,15 +440,15 @@ animation:slideInRight 400ms;
 	font-size: .8em;
 	margin-right: 8px;
 }
-.popover #sendTextImg {
+.popover #sendTextImg, .popover #sendEmail #sendEmailImg {
 	width: 25px;
 	float: right;
 	margin: 5px 10px;
 }
-.popover #sendTextImg:hover {
+.popover #sendTextImg:hover, .popover #sendEmail #sendEmailImg:hover {
 	cursor: pointer;
 }
-.popover #result {
+.result{
 	float: right;
 	color: #ebff00;
 	font-size: .5em;
@@ -456,7 +456,18 @@ animation:slideInRight 400ms;
 	margin-top: 5px;
 	display: none;
 }
-
+.modal .sendMessage {
+	margin-top: 5px !important;
+}
+.modal .result {
+	font-size: 1em;
+	color: #dd4b39;
+	font-weight: bold;
+	line-height: 1.5em;
+}
+.contactLink #emailWrapper {
+	margin-left: 11.5em !important;
+}
 
 
 

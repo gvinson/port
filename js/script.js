@@ -48,6 +48,8 @@ $(document).ready(function() {
 		if(popoverShow) {
 			popoverShow = false;
 			$("#textMessageWrapper").slideUp('fast');
+			var result = $("#textMessageWrapper").find(".result");
+			$(result).hide();
 		}
 		else {
 			popoverShow = true;
@@ -55,22 +57,41 @@ $(document).ready(function() {
 		}
 		e.stopPropagation();
 	});
+	//Email address clicked to send an email
+	//Show popover
+	$(".contactLink #emailAddress").click(function(e) {
+		if(popoverShow) {
+			popoverShow = false;
+			$("#emailWrapper").slideUp('fast');
+			var result = $("#emailWrapper").find(".result");
+			$(result).hide();
+		}
+		else {
+			popoverShow = true;
+			$("#emailWrapper").fadeIn('fast');
+		}
+		e.stopPropagation();
+	});
 	
 	//Close modal if document is clicked outside of modal
 	$(document).mousedown(function (e) {
-        var modalWrapper = $("#modalWrapper"), //modal
+        var modalWrapper = $(".modalWrapper"), //modal
 			popoverWrapper = $(".popover"); //popover
 		
         if (modalWrapper.has(e.target).length === 0) {
             $(modalWrapper).fadeOut('fast');
             modalShow = false;
+			var result = $(modalWrapper).find(".result");
+			$(result).hide();
         }
 		if (popoverWrapper.has(e.target).length === 0) {
             $(popoverWrapper).fadeOut('fast');
             popoverShow = false;
+			var result = $(popoverWrapper).find(".result");
+			$(result).hide();
         }
     });
-	
+
 	//Contact close button hover img swap
 	$("#contactWrapper #close img").hover(function() {
 		$(this).attr("src", $(this).attr("src").replace("_off.png","_on.png"));
@@ -95,8 +116,8 @@ $(document).ready(function() {
 		curVal = $(this).val();
         //Check val default input
         if (
-				(curVal == 'Your email or cell #') || (curVal == 'Your email') || 
-				(curVal == 'Text Message....') || (curVal == 'Message for me...')
+				(curVal == 'Your email or cell #') || (curVal == 'Your email address') || 
+				(curVal == 'Text Message....') || (curVal == 'Message for me....')
 		) {
             $(this).val('');
         }
@@ -114,7 +135,14 @@ $(document).ready(function() {
 			});
         }
     });
-		
+	
+	//send message button click
+	$(".sendMessage").click(function() {
+		var parent = $(this).parent();
+		var result = $(parent).find(".result");
+		$(result).fadeIn('fast');
+	})
+	
 	//Sliding Actions for "the web"
 	$("#actions").css({
 		"height": $("#actions div:first").height()+14,
