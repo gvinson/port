@@ -12,8 +12,16 @@ $(document).ready(function() {
 		var text = $(textDiv).text();
 		var img = $(this).children('a').children("img");
 		$(img).css("opacity",".75");
-		$(this).parent().prepend('<li class="topNavText" style="margin-left:-'+($(textDiv).width()+25)+'px;">'+text+'</div>');
+		
+		var li = document.createElement("li");
+		$(li).attr("class", "topNavText");
+		$(li).css("margin-left","-"+$(text).width);
+		$(li).text(text);
+		//$("#home").prepend('<li class="topNavText">'+text+'</div>');
+		$("#home").prepend($(li));
 		$(".topNavText").fadeIn();
+		
+
 	}, function() {
 		var text = $(this).children('a').children("div");
 		var img = $(this).children('a').children("img");		
@@ -206,68 +214,12 @@ $(document).ready(function() {
 		}
 	}
 	
-	/* FONT SELECTOR PLUG IN */
-	var activateFonts = false;
-	var background = $("#selectDOM").css("background-color");
-	$("#selectDOM").click(function() {
-		if(!activateFonts) {
-			activateFonts = true;
-			$(this).css("background-color","lightblue");
-		}
-		else {
-			activateFonts = false;
-			$(this).css("background-color",background);
-		}
+	//Portfolio image hovers
+	$('.workList li a').hover(function() {
+		$(this).children('img').eq(1).stop().animate({opacity:"0"}, 300);
+		$(this).children(".workTag").fadeIn(300);
+	}, function() {
+		$(this).children('img').eq(1).stop().animate({opacity:"1"}, 300);
+		$(this).children(".workTag").fadeOut(300);
 	});
-		var fontsUsed = [];
-		var fontsAvail = [];
-		
-	$("*").each(function () {
-		var font = $(this).css("font-family");
-		font = font.split(",");
-		for(var i=0; i< font.length; i++)
-			fontsUsed.push(font[i]);
-	});
-
-	$.each(fontsUsed, function(i, el){
-		if($.inArray(el, fontsAvail) === -1) 
-		{
-			fontsAvail.push(el);
-		}
-	});
-
-	function loadFont() {
-	$(document).click(function(e) {
-		if(activateFonts) {
-			e.preventDefault();
-			var target = $(e.target);
-			var list = document.getElementById("fontList");
-			$(target).css("font-family",list.options[list.selectedIndex].text);
-		}
-		});
-	}
-
-	var ul = document.createElement("select");
-	ul.id = "fontList";
-	$(ul).attr("onchange",loadFont());
-	for(var i=0;i<fontsAvail.length;i++)
-	{
-		var option = document.createElement("option");
-		option.text = fontsAvail[i];
-		option.style.fontFamily = fontsAvail[i];
-		try
-		  {
-		  // for IE earlier than version 8
-		  ul.add(option,ul.options[null]);
-		  }
-		catch (e)
-		  {
-		  ul.add(option,null);
-		  }
-	}
-
-	$("#fontList option").each(function() {
-		$(this).css("color","red");
-	});
-	$("#footer").append(ul);
 });

@@ -1,7 +1,5 @@
 #headerWrapper {
-	overflow-x: hidden !important;
-	width: 99.7%;
-	margin: 0 auto;
+	
 }
 #saying {
 	margin-bottom: 0em !important;
@@ -34,13 +32,14 @@
 	zoom: 1;
 	height: 1.5em !important;
 }
+/*
 #headerWrapper {
 	position: static;
 }
 #header {
 	width: 960px !important;
 	margin: 0 auto;
-}
+} */
 #logoTag {
 	line-height: .7em !important;
 }
@@ -48,4 +47,10 @@
 	position: absolute !important;
 	margin-left: 0%;
 	margin-top: -25px !important;
+}
+#emailWrapper {
+	margin-left: 0em !important;
+}
+.workTag .period {
+	margin-top: -.45em !important;
 }
