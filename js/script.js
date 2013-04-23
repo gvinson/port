@@ -214,12 +214,31 @@ $(document).ready(function() {
 		}
 	}
 	
+
 	//Portfolio image hovers
-	$('.workList li a').hover(function() {
-		$(this).children('img').eq(1).stop().animate({opacity:"0"}, 300);
-		$(this).children(".workTag").fadeIn(300);
+	var works = [];
+	$(".work").each(function() {
+		works.push($(this));
+	});
+	$(".work .workImg").hover(function () {
+		var overlay = $(this).find(".imgOverlay");
+		$(overlay).fadeIn(300);
 	}, function() {
-		$(this).children('img').eq(1).stop().animate({opacity:"1"}, 300);
-		$(this).children(".workTag").fadeOut(300);
+		var overlay = $(this).find(".imgOverlay");
+		$(overlay).fadeOut(300);
+	});
+	$(".workImg").click(function(e) {
+		e.preventDefault();
+		var detailsWrapper = "#"+$(this).attr("rel")+"Details";
+		var arrow = $(this).parent().find('.workArrow');
+		
+		$(arrow).show({
+			"complete":function() {				
+				$(detailsWrapper).fadeIn();
+			}
+		});
+		
+	
+		
 	});
 });

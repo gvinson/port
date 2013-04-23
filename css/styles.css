@@ -172,11 +172,12 @@ img { border: none; }
 	zoom: 1;
 }
 #contentWrapper {
-	margin-left: -6em;
+	/* margin-left: -6em; */
 	margin-top: 10em;
 }
 .post {
-	width: 75%;
+	/* width: 75%; */
+	width: 95%;
 	margin: 0 auto;
 	margin-top: 5.5em;
 }
@@ -195,13 +196,18 @@ img { border: none; }
 .postTitle {
 	display: inline;
 	position: relative;
-	top: -5px;
+	/* top: -5px; */
+	/* All below this is new */
+	line-height: 1.35em;
+	font-size: 2.5em;
+	font-family: 'Bebas','Helvetica', Arial, sans-serif;
 }
 .postContent {
 	font-family: 'Open Sans', 'Helvetica', Arial, sans-serif;
 	font-size: 1em;
 	line-height: 170%;
-	margin-left: 65px;
+	/* margin-left: 65px; */
+	margin-left: 80px;
 }
 .actionsWrapper {
 	display: inline-block;
@@ -259,8 +265,7 @@ animation:slideInRight 400ms;
 }
 #header {
 	width: 71.5%;
-	/*min-width: 960px;
-	max-width: 1050px;*/
+	min-width: 980px;
 	margin: 0 auto;
 }
 .modalWrapper
@@ -473,71 +478,145 @@ animation:slideInRight 400ms;
 	margin-left: 11.5em;
 }
 #workWrapper {
-width: 71%;
-max-width: 1050px;
-min-width: 960px;
+width: 100%;
 margin: 0 auto;
-	margin-bottom: 5em;
-	
+margin-bottom: 5em;
 }
-.workList {
-	list-style: none;
+.work {
+	padding: 2em 0;
+	width: 71%;
+	min-width: 980px;
+	max-width: 1050px;
+	margin: 0 auto;
 }
-.workList li {
-	display: inline;
-	float: left;
-	width: 306px;
-	height: 410px;
-	overflow: hidden;
-	margin: 1em;
-	border: 1px solid #aaa;
+.work:first-child {
+	padding-top: 0em;
 }
-.workList li a {
-	color: #000;
+.work .workImg {
+	float: left; 
+	margin-right: 15px;
+	width: 35%;
+	outline: 0;
 	text-decoration: none;
 }
-.workList li img {
-	position: absolute;
+.work .workContentWrapper {
+	float: right; 
+	width: 62%;
 }
-.workList li .workTag {
-	position: relative;
-	z-index: 10;
-	background-color: #fff;
-	padding: 7px;
-	font-size: 1.5em;
-	top: 345px;
-	width: 75%;
-	font-family: 'Bebas','Open Sans', Helvetica, Arial, Sans Serif;
-	letter-spacing: 1px;
-	display: none;
-	margin-left: -1px;
+.work .workTitle {
+	float: left;
 }
-.workTag .workType {
+.work .workTitle h3 {
+	font-family: 'Bebas';
+	font-size: 2em;
+	margin: 0;
+}
+.work .workTitle .workType {
+	color: #aaa;
+}
+.work .viewMore {
 	display: block;
-	font-size: .5em;
-	color: #888;
-	font-family: 'Open Sans', Helvetica, Arial, Sans Serif;
-	margin-bottom: -1.5em;
+	background-color: #dd4b39;
+	color: #fff;
+	text-decoration: none;
+	font-family: 'Helvetica';
+	width: 7em;
+	height: 1.25em;
+	text-align: center;
+	line-height: 1.25em;
+	font-size: 1.1em;
+	text-shadow: none;
+	padding: 3px;
+	border: 3px solid #dd4b39;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
 }
-.period {
-	color:#d74137;
+.work .viewMore:hover {
+		/*background-color: #ebff00;
+	color: #333; */
+	text-shadow: 1px 1px 2px #666;
+	border-color: rgb(173, 53, 38);
 }
-.workTag .period {
-	font-size: 1.5em;
+.work .period {
+	color: #dd4b39;
+}
+#workWrapper hr {
+	border: none;
+	height: 3px;
+	background: url("../img/vertStripe.png") top left repeat-x #fff;
+	width: 100%;
+	min-width: 980px;
+	max-width: 1050px;
+	margin: 0 auto;
+	padding-bottom: 4em;
+}
+.work .imgOverlay {
+	width: 341px !important;
+	height: 220px !important;
+	background: url("../img/modalBG.png") top left repeat;
+	color: #eee;
+	font-family: 'Bebas';
+	font-size: 6em;
+	line-height: 2.5;
+	text-align: center;
 	position: absolute;
-	margin-top: -.25em;
+	z-index: 5;
+	letter-spacing: 4px;
+	text-shadow: 2px 2px 2px #000;
+	display: none;
 }
-
-
-
-
-
-
-
-
-
-
-
+.work .workImg img:hover {
+	cursor: pointer;
+}
+.work .workImg ul {
+	list-style: none;
+	display: table;
+	padding: 0;
+	width: 98%;
+	margin: 0px;
+}
+.work .workImg ul li {
+	padding: 2px 4px;
+	display: table-cell;
+	font-family: 'kelly slab';
+	color: #aaa;
+	text-shadow: none;
+}
+.work .workImg ul li:first-child {
+	padding-left: 0;
+}
+.workArrow {
+	display: none;
+	border: 20px solid #000;
+	border-color: transparent;
+	border-bottom-color: #222;
+	margin: 0 75px;
+}
+.workDetailsWrapper {
+	position: relative;
+	left: 0;
+	right: 0;
+	background-color: #222;
+	display: none;
+	margin-top: -3em;
+	width: 100%;
+	margin-top: -2em;
+}
+.workDetails {
+	text-align: center;
+	padding-top: 15px;
+}
+.workDetails img {
+	width: 609px;
+	border: 3px solid #fff;
+	margin-bottom: 20px;
+}
+.workDetails img:first-child {
+	border: none;
+	margin-bottom: 0px;
+}
 
 
 

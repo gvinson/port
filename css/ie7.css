@@ -1,11 +1,9 @@
-#headerWrapper {
-	
-}
 #saying {
-	margin-bottom: 0em !important;
+	margin-bottom: .75em !important;
 	width: 960px;
 	overflow: hidden;
 	text-align: left;
+	margin-top: 40px;
 }
 .actionsWrapper {
 	width: 960px;
@@ -30,16 +28,8 @@
 	float: right;
 	clear: both;
 	zoom: 1;
-	height: 1.5em !important;
+	height: 1.08em !important;
 }
-/*
-#headerWrapper {
-	position: static;
-}
-#header {
-	width: 960px !important;
-	margin: 0 auto;
-} */
 #logoTag {
 	line-height: .7em !important;
 }
@@ -53,4 +43,7 @@
 }
 .workTag .period {
 	margin-top: -.45em !important;
+}
+#workWrapper hr {
+	display: none;
 }
