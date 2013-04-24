@@ -3,7 +3,8 @@ $(document).ready(function() {
 	var contactShow = false,//if contact window is shown or not
 		modalShow = false, 	//if modal window is shown or not
 		popoverShow = false, 	//if popover showing or not
-		curVal;				//used for current value for textboxes
+		curVal,				//used for current value for textboxes
+		sectionTitleShow;		//used to show/hide the section titles on scroll
 		
 	//top nav img hovers
 	$("#topNav ul li").hover(function() {
@@ -18,10 +19,8 @@ $(document).ready(function() {
 		$(li).css("margin-left","-"+$(text).width);
 		$(li).text(text);
 		//$("#home").prepend('<li class="topNavText">'+text+'</div>');
-		$("#home").prepend($(li));
+		$("#topNav ul li:first").prepend($(li));
 		$(".topNavText").fadeIn();
-		
-
 	}, function() {
 		var text = $(this).children('a').children("div");
 		var img = $(this).children('a').children("img");		
@@ -34,21 +33,37 @@ $(document).ready(function() {
 	});
 	
 	//Top Navigation Click Functions
-	$("#topNav #contact").click(function(e) {
+	$("#topNav a").click(function(e) {
 		e.preventDefault();
-		if(!contactShow) {
-			$("#contactWrapper").animate({
-				'top':'0px'
-			}, 300);
-			contactShow = true;
+		
+		if($(this).attr("id") != "contactLink")
+		{
+			var goToID = $(this).attr("id").substring(0,$(this).attr("id").length-4);
+			smoothScroll(goToID);
+			console.log(goToID);
 		}
 		else {
-			$("#contactWrapper").animate({
-				'top':'-320px'
-			}, 200);
-			contactShow = false;
+			if(!contactShow) {
+				$("#contactWrapper").animate({
+					'top':'0px'
+				}, 300);
+				contactShow = true;
+			}
+			else {
+				$("#contactWrapper").animate({
+					'top':'-320px'
+				}, 200);
+				contactShow = false;
+			}
 		}
 	});
+	
+	function smoothScroll(target) {
+		target = "#" + target;
+		var targetOffset = $(target).offset().top-50;
+		$('html, body').animate({scrollTop: targetOffset}, 400);
+		console.log(target + " " + targetOffset);
+	}
 		
 	//Phone number clicked to send a text
 	//Show popover
@@ -224,7 +239,6 @@ $(document).ready(function() {
 		$(countdown).text(remain);
 	}
 	
-
 	//Portfolio image hovers
 	var works = [];
 	$(".work").each(function() {
@@ -254,12 +268,12 @@ $(document).ready(function() {
 		});	
 	});
 	
+	//Close button for workDetailsWrapper (White x in upper right corner)
 	$(".workDetailsWrapper .closeWork").click(function() {
 		var scrollTop = $(this).offset().top - 350;
-		console.log($(this).scrollTop());
 		$(".workArrow").fadeOut('fast');
 		$(".workDetailsWrapper").fadeOut('fast');
-		$('html, body').animate({scrollTop:scrollTop}, 1000);
+		$('html, body').animate({scrollTop:scrollTop}, 400);
 		return false;
 	});
 });

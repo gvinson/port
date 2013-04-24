@@ -47,3 +47,11 @@
 #workWrapper hr {
 	display: none;
 }
+.work .workImg ul li {
+	float: left;
+}
+.sectionTitle {
+	position: relative;
+	margin-top: -75px !important;
+	color: #aaa !important;
+}

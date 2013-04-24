@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>Grant Vinson</title>
-<link rel="stylesheet" href="css/normalize.css"></link>
-<link rel="stylesheet" href="css/fonts/fonts.css"></link>
-<link rel="stylesheet" href="css/styles.css"></link>
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/fonts/fonts.css">
+<link rel="stylesheet" href="css/styles.css">
 <!--[if IE]>
 	<style type="text/css"> 
 		#saying { margin: 1.5em 0;} 
@@ -14,10 +15,20 @@
 	</style>
 <![endif]-->
 <!--[if lte IE 7]>
-	<link rel="stylesheet" type="text/css" href="css/ie7.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/ie7.css">
 <![endif]-->
 <!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<style type="text/css">
+		.sectionTitle {
+			font-size: 4em;
+			letter-spacing: 5px;
+			float: left;
+			margin-left: 6.6em;
+			margin-top: -.75em;
+			display: block !important;
+		}
+	</style>
 <![endif]-->
 </head>
 <body>
@@ -34,7 +45,7 @@
 				<div class="popover right" id="textMessageWrapper">
 					<div class="arrow"></div>
 					<div id="sendText">
-						<input id="sendersNumber" class="empty" type="text" value="Your email or cell #"></input>
+						<input id="sendersNumber" class="empty" type="text" value="Your email or cell #" />
 						<textarea id="textMessage" class="empty" cols="50" rows="5" wrap="hard">Text Message....</textarea>
 						<div id="countdown">160</div>
 						<img src="img/sendText.png" class="sendMessage" id="sendTextImg" alt="Send me a text" />
@@ -48,7 +59,7 @@
 				<div class="popover right" id="emailWrapper">
 					<div class="arrow"></div>
 					<div id="sendEmail">
-						<input id="sendersEmail" class="empty" type="text" value="Your email address"></input>
+						<input id="sendersEmail" class="empty" type="text" value="Your email address" />
 						<textarea id="emailMessage" class="empty" cols="50" rows="5" wrap="hard">Message for me....</textarea>
 						<img src="img/sendText.png" class="sendMessage" id="sendEmailImg" alt="Send me an email!" />
 						<span id="emailResult" class="result">Sent!</span>
@@ -73,9 +84,9 @@
 		</div>
 		<nav id="topNav">
 			<ul>
-				<li id="home"><a href="#"><img src="img/icons/port.png"><div>Work</div></a></li>
-				<li><a href="#"><img src="img/icons/blog_off.png"><div>Blog</div></a></li>
-				<li><a id="contact" href="#"><img src="img/icons/contact_off.png"><div style="margin-left: -10px;">Contact</div></a></li>
+				<li><a id="workWrapperLink" href="#"><img src="img/icons/port.png"><div>Work</div></a></li>
+				<li><a id="blogWrapperLink" href="#"><img src="img/icons/blog_off.png"><div>Blog</div></a></li>
+				<li><a id="contactLink" href="#"><img src="img/icons/contact_off.png"><div style="margin-left: -10px;">Contact</div></a></li>
 			</ul>
 		</nav>
 	</header>
@@ -98,182 +109,189 @@
 	</section>
 </div>
 <section id="workWrapper">
-		<div class="work">
-			<a class="workImg" href="#" rel="punkAid">
-				<div class="imgOverlay">VIEW</div>
-				<img src="img/works/buttons2/punkaid.png"><br />
-				<ul>
-					<li>PHP</li>
-					<li>MySQL</li>
-					<li>HTML</li>
-					<li>CSS</li>
-					<li>jQuery</li>
-					<li>Adobe CS5</li>
-				</ul>
-				
+	<div class="sectionTitle" id="workSectionTitle">
+		WORK
+	</div>
+	<div class="wrapper">
+	<div class="work">
+		<a class="workImg" href="#" rel="punkAid">
+			<div class="imgOverlay">VIEW</div>
+			<img src="img/works/buttons2/punkaid.png"><br />
+			<ul>
+				<li>PHP</li>
+				<li>MySQL</li>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>jQuery</li>
+				<li>Adobe CS5</li>
+			</ul>
+			
+		</a>
+		<div class="workContentWrapper">
+			<div class="workTitle" style="clear: both;">
+				<h3>PunkAid.org<span class="period">.</span></h3>
+				<div class="workType">Web Design</div>
+			</div>
+			<div class="clear"></div>
+			<p>
+				PunkAid.org is a non-profit organization whose main goal is to simply help people in need. 
+				The overall theme that was desired was "grungy". The site needed to be designed so that it would
+				be accessible by visitors from other countries with lower bandwidths and who spoke a language
+				other than English.
+			</p>
+			<a class="viewMore" href="#" rel="punkAid">
+				View Project
 			</a>
-			<div class="workContentWrapper">
-				<div class="workTitle" style="clear: both;">
-					<h3>PunkAid.org<span class="period">.</span></h3>
-					<div class="workType">Web Design</div>
-				</div>
-				<div class="clear"></div>
-				<p>
-					PunkAid.org is a non-profit organization whose main goal is to simply help people in need. 
-					The overall theme that was desired was "grungy". The site needed to be designed so that it was 
-					easy to use due by visitors from other countries with lower bandwidths and who spoke a language
-					other than English.
-				</p>
-				<a class="viewMore" href="#" rel="punkAid">
-					View Project
-				</a>
+		</div>
+		<div class="clear"></div>
+		<div class="workArrow"></div>
+	</div>
+	</div>
+	<div class="workDetailsWrapper" id="punkAidDetails">
+		<div class="closeWork">x</div>
+		<div class="workDetails">
+			<img src="img/works/punkaid/comp.png">
+			<br /><br />
+			<img src="img/works/punkaid/home.png">
+			<br /><br />
+			<img src="img/works/punkaid/media.png">
+			<br /><br />
+			<img src="img/works/punkaid/contact.png">
+			<br /><br />
+		</div>
+	</div>			
+	<div class="work">
+		<hr>
+		<div class="workImg">
+			<div class="imgOverlay">VIEW</div>
+			<img src="img/works/buttons2/gingerZero.png">
+		</div>
+		<div class="workContentWrapper">
+			<div class="workTitle" style="clear: both;">
+				<h3>GingerZero.com<span class="period">.</span></h3>
+				<div class="workType">Web Design</div>
 			</div>
 			<div class="clear"></div>
-			<div class="workArrow"></div>
-		</div>
-		<div class="workDetailsWrapper" id="punkAidDetails">
-			<div class="closeWork">x</div>
-			<div class="workDetails">
-				<img src="img/works/punkaid/comp.png">
-				<br /><br />
-				<img src="img/works/punkaid/home.png">
-				<br /><br />
-				<img src="img/works/punkaid/media.png">
-				<br /><br />
-				<img src="img/works/punkaid/contact.png">
-				<br /><br />
-			</div>
-		</div>			
-		<div class="work">
-			<hr>
-			<div class="workImg">
-				<div class="imgOverlay">VIEW</div>
-				<img src="img/works/buttons2/gingerZero.png">
-			</div>
-			<div class="workContentWrapper">
-				<div class="workTitle" style="clear: both;">
-					<h3>GingerZero.com<span class="period">.</span></h3>
-					<div class="workType">Web Design</div>
-				</div>
-				<div class="clear"></div>
-				<p>
-					Ginger Zero is an alternative model based out of Chicago, IL. After the publication of this website, Ginger Zero has since become Chicago's go-to female alternative model. 
-					<br />
-					The admin page allows the customer to upload new photos and photosets, update her news feed, add events to her events calendar, send newsletters to her subscribers, manage her subscribers and manage/respond to her shoot requests.
-					<br />
-					The website was built with PHP, MySQL, HTML, CSS and JavaScript.  The design was created with Adobe Photoshop and Illustrator CS5.
+			<p>
+				Ginger Zero is an alternative model based out of Chicago, IL. After the publication of this website, Ginger Zero has since become Chicago's go-to female alternative model. 
+				<br />
+				The admin page allows the customer to upload new photos and photosets, update her news feed, add events to her events calendar, send newsletters to her subscribers, manage her subscribers and manage/respond to her shoot requests.
+				<br />
+				The website was built with PHP, MySQL, HTML, CSS and JavaScript.  The design was created with Adobe Photoshop and Illustrator CS5.
 
-				</p>
-				<a class="viewMore" href="#">
-					View Project
-				</a>
+			</p>
+			<a class="viewMore" href="#">
+				View Project
+			</a>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="work">
+		<hr>
+		<div class="workImg">
+			<div class="imgOverlay">VIEW</div>
+			<img src="img/works/buttons2/district3.png">
+		</div>
+		<div class="workContentWrapper">
+			<div class="workTitle" style="clear: both;">
+				<h3>Oklahoma County District 3<span class="period">.</span></h3>
+				<div class="workType">Web Design</div>
 			</div>
 			<div class="clear"></div>
+			<p>
+				This is some text about this site. This is some text about this site. 
+				This is some text about this site. This is some text about this site. 
+				This is some text about this site. This is some text about this site. 
+				This is some text about this site. This is some text about this site. 
+				This is some text about this site. This is some text about this site. 
+			</p>
+			<a class="viewMore" href="#">
+				View Project
+			</a>
 		</div>
-		<div class="work">
-			<hr>
-			<div class="workImg">
-				<div class="imgOverlay">VIEW</div>
-				<img src="img/works/buttons2/district3.png">
-			</div>
-			<div class="workContentWrapper">
-				<div class="workTitle" style="clear: both;">
-					<h3>Oklahoma County District 3<span class="period">.</span></h3>
-					<div class="workType">Web Design</div>
-				</div>
-				<div class="clear"></div>
-				<p>
-					This is some text about this site. This is some text about this site. 
-					This is some text about this site. This is some text about this site. 
-					This is some text about this site. This is some text about this site. 
-					This is some text about this site. This is some text about this site. 
-					This is some text about this site. This is some text about this site. 
-				</p>
-				<a class="viewMore" href="#">
-					View Project
-				</a>
+		<div class="clear"></div>
+	</div>
+	<div class="work">
+		<hr>
+		<div class="workImg">
+			<div class="imgOverlay">VIEW</div>
+			<img src="img/works/buttons2/courtClerk.png">
+		</div>
+		<div class="workContentWrapper">
+			<div class="workTitle" style="clear: both;">
+				<h3>Oklahoma County Court Clerk<span class="period">.</span></h3>
+				<div class="workType">Web Design</div>
 			</div>
 			<div class="clear"></div>
+			<p>
+				This is some text about this site. This is some text about this site. 
+				This is some text about this site. This is some text about this site. 
+				This is some text about this site. This is some text about this site. 
+				This is some text about this site. This is some text about this site. 
+				This is some text about this site. This is some text about this site. 
+			</p>
+			<a class="viewMore" href="#">
+				View Project
+			</a>
 		</div>
-		<div class="work">
-			<hr>
-			<div class="workImg">
-				<div class="imgOverlay">VIEW</div>
-				<img src="img/works/buttons2/courtClerk.png">
-			</div>
-			<div class="workContentWrapper">
-				<div class="workTitle" style="clear: both;">
-					<h3>Oklahoma County Court Clerk<span class="period">.</span></h3>
-					<div class="workType">Web Design</div>
-				</div>
-				<div class="clear"></div>
-				<p>
-					This is some text about this site. This is some text about this site. 
-					This is some text about this site. This is some text about this site. 
-					This is some text about this site. This is some text about this site. 
-					This is some text about this site. This is some text about this site. 
-					This is some text about this site. This is some text about this site. 
-				</p>
-				<a class="viewMore" href="#">
-					View Project
-				</a>
+		<div class="clear"></div>
+	</div>
+	<div class="work">
+		<hr>
+		<div class="workImg">
+			<div class="imgOverlay">VIEW</div>
+			<img src="img/works/buttons2/badEngrish.png">
+		</div>
+		<div class="workContentWrapper">
+			<div class="workTitle" style="clear: both;">
+				<h3>Bad Engrish<span class="period">.</span></h3>
+				<div class="workType">Graphic & Print Design</div>
 			</div>
 			<div class="clear"></div>
+			<p>
+				This is some text about this site. This is some text about this site. 
+				This is some text about this site. This is some text about this site. 
+				This is some text about this site. This is some text about this site. 
+				This is some text about this site. This is some text about this site. 
+				This is some text about this site. This is some text about this site. 
+			</p>
+			<a class="viewMore" href="#">
+				View Project
+			</a>
 		</div>
-		<div class="work">
-			<hr>
-			<div class="workImg">
-				<div class="imgOverlay">VIEW</div>
-				<img src="img/works/buttons2/badEngrish.png">
-			</div>
-			<div class="workContentWrapper">
-				<div class="workTitle" style="clear: both;">
-					<h3>Bad Engrish<span class="period">.</span></h3>
-					<div class="workType">Graphic & Print Design</div>
-				</div>
-				<div class="clear"></div>
-				<p>
-					This is some text about this site. This is some text about this site. 
-					This is some text about this site. This is some text about this site. 
-					This is some text about this site. This is some text about this site. 
-					This is some text about this site. This is some text about this site. 
-					This is some text about this site. This is some text about this site. 
-				</p>
-				<a class="viewMore" href="#">
-					View Project
-				</a>
+		<div class="clear"></div>
+	</div>
+	<div class="work">
+		<hr>
+		<div class="workImg">
+			<div class="imgOverlay">VIEW</div>
+			<img src="img/works/buttons2/shayla.png">
+		</div>
+		<div class="workContentWrapper">
+			<div class="workTitle" style="clear: both;">
+				<h3>Wedding Invitations<span class="period">.</span></h3>
+				<div class="workType">Graphic & Print Design</div>
 			</div>
 			<div class="clear"></div>
+			<p>
+				This is some text about this site. This is some text about this site. 
+				This is some text about this site. This is some text about this site. 
+				This is some text about this site. This is some text about this site. 
+				This is some text about this site. This is some text about this site. 
+				This is some text about this site. This is some text about this site. 
+			</p>
+			<a class="viewMore" href="#">
+				View Project
+			</a>
 		</div>
-		<div class="work">
-			<hr>
-			<div class="workImg">
-				<div class="imgOverlay">VIEW</div>
-				<img src="img/works/buttons2/shayla.png">
-			</div>
-			<div class="workContentWrapper">
-				<div class="workTitle" style="clear: both;">
-					<h3>Wedding Invitations<span class="period">.</span></h3>
-					<div class="workType">Graphic & Print Design</div>
-				</div>
-				<div class="clear"></div>
-				<p>
-					This is some text about this site. This is some text about this site. 
-					This is some text about this site. This is some text about this site. 
-					This is some text about this site. This is some text about this site. 
-					This is some text about this site. This is some text about this site. 
-					This is some text about this site. This is some text about this site. 
-				</p>
-				<a class="viewMore" href="#">
-					View Project
-				</a>
-			</div>
-			<div class="clear"></div>
-		</div>
-
+		<div class="clear"></div>
+	</div>
 </section>
-<div class="wrapper">
-	<section id="contentWrapper">
+<section id="blogWrapper" style="margin-top: 10em;">
+	<div class="sectionTitle" id="postSectionTitle">
+				POSTS
+	</div>
+	<div class="wrapper">
 		<article class="post">
 			<div class="dateWrapper">
 				<div class="postDate">05/02</div>
@@ -337,14 +355,16 @@
 			</div>
 			<div class="clear"></div>
 		</article>
-	</section>
+	</div>
+</section>
+<div class="scrollTopWrapper">
+	<div id="backToTop"></div>
 </div>
-
 <div class="modalWrapper" id="modal_text">
 	<div class="modal">
 		<div class="modalPadding" id="modal_sendText">
 			<div class="modalHeader">Text Me</div>
-			<input id="modal_sendersNumber" class="empty" type="text" value="Your email"></input>
+			<input id="modal_sendersNumber" class="empty" type="text" value="Your email" />
 			<textarea id="modal_textMessage" class="empty" cols="50" rows="4" wrap="hard">Message for me...</textarea>
 			<div id="modal_countdown">160</div>
 			<img src="img/sendText.png" class="sendMessage" id="modal_sendTextImg" alt="Send me a text" />
@@ -357,7 +377,7 @@
 	<div class="modal">
 		<div class="modalPadding" id="modal_sendEmail">
 			<div class="modalHeader">Email Me</div>
-			<input class="senderInfo empty" id="modal_sendersEmail" class="empty" type="text" value="Your email address"></input>
+			<input class="senderInfo empty" id="modal_sendersEmail" class="empty" type="text" value="Your email address" />
 			<textarea id="modal_emailMessage" class="empty" cols="50" rows="4" wrap="hard">Message for me....</textarea>
 			<img src="img/sendText.png" class="sendMessage" id="modal_sendEmailImg" alt="Send me a text" />
 			<span class="result" id="modal_Emailresult">Sent!</span>
@@ -365,8 +385,15 @@
 		</div>
 	</div>
 </div>
-</body>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
+
+<!--[if !IE]> -->
+	<script type="text/javascript" src="js/scroll.js"></script>
+<!-- <![endif]-->
+<!--[if gte IE 9]>
+	<script type="text/javascript" src="js/scroll.js"></script>
+<![endif]-->
+</body>
 </html>
