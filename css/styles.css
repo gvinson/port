@@ -321,7 +321,6 @@ animation:slideInRight 400ms;
 .modalPadding textarea {
 	margin: 10px auto !important;
 	border-bottom: 2px dotted #e0e0e0;
-	overflow: hidden;
 }
 #modal_countdown {
 	background-color: #fff;
@@ -424,13 +423,13 @@ animation:slideInRight 400ms;
 	margin: 10px auto;
 	border: 1px solid #aaa;
 	border-bottom: none;
-	overflow: hidden;
+	padding-bottom: 1em;
 }
 .popover #sendText #countdown {
 	background-color: #fff;
 	width: 93%;
 	margin: 0 auto;
-	margin-top: -20px;
+	margin-top: -10px;
 	border: 1px solid #aaa;
 	border-top: none;
 	text-align: right;
@@ -521,23 +520,18 @@ margin-bottom: 5em;
 	text-decoration: none;
 	font-family: 'Helvetica';
 	width: 7em;
-	height: 1.25em;
+	height: 1.5em;
 	text-align: center;
-	line-height: 1.25em;
+	line-height: 1.5em;
 	font-size: 1.1em;
 	text-shadow: none;
 	padding: 3px;
-	border: 3px solid #dd4b39;
-	-webkit-transition: all .2s ease-in-out;
-	-moz-transition: all .2s ease-in-out;
-	-o-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;
 }
 .work .viewMore:hover {
 		/*background-color: #ebff00;
 	color: #333; */
 	text-shadow: 1px 1px 2px #666;
-	border-color: rgb(173, 53, 38);
+	background-color: rgb(221, 27, 3);
 }
 .work .period {
 	color: #dd4b39;
@@ -545,7 +539,7 @@ margin-bottom: 5em;
 #workWrapper hr {
 	border: none;
 	height: 3px;
-	background: url("../img/vertStripe.png") top left repeat-x #fff;
+	background: url("../img/vertStripe.png") top left repeat-x #fdfdfd;
 	width: 100%;
 	min-width: 980px;
 	max-width: 1050px;
@@ -610,15 +604,34 @@ margin-bottom: 5em;
 }
 .workDetails img {
 	width: 609px;
-	border: 3px solid #fff;
+	border: 3px solid #000;
 	margin-bottom: 20px;
+	-webkit-box-shadow: 2px 2px 8px #000;
+	-mozilla-box-shadow: 2px 2px 8px #000;
+	-o-box-shadow: 2px 2px 8px #000;
+	box-shadow: 2px 2px 8px #000;
 }
 .workDetails img:first-child {
 	border: none;
 	margin-bottom: 0px;
+	-webkit-box-shadow: none;
+	-mozilla-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
 }
-
-
+.workDetailsWrapper .closeWork {
+	position: absolute;
+	top: 15px;
+	left: 95%;
+	font-family: 'Verdana', 'Helvetica';
+	color: #fdfdfd;
+	font-size: 3em;
+	text-shadow: none;
+} 
+.workDetailsWrapper .closeWork:hover 
+{
+	cursor: pointer;
+}
 
 
 

@@ -7,3 +7,6 @@
 	
 	Style the "slidedown" for the portfolio section a little better
 	(need new ideas for the layout of this section)
+	
+	Make workClose X only appear when scrolltop or offset().top are equal to 
+	where this section starts. 

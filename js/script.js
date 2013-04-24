@@ -189,29 +189,39 @@ $(document).ready(function() {
 	setInterval(slide,2500);
 	
 	//Monitor text message size
-	$("#textMessage, #modal_textMessage").keypress(function(e) {
+	$("#textMessage, #modal_textMessage").keyup(function(e) {
 		checkLength($(this),e);
+		console.log(e.keyCode);
 	});
 	$("#textMessage, #modal_textMessage").change(function(e) {
 		checkLength($(this),e);
 	});
+
 	function checkLength(textarea,e) {
 		var tval = $(textarea).val(),
 			tlength = tval.length,
 			set = 160,
 			remain = parseInt(set - tlength),
 			countdown = $("#countdown");
-		
+		console.log(e.keyPress);
 		//check to see if modal is active or popover
 		if($(textarea).attr("id") == "modal_textMessage")
 				countdown = $("#modal_countdown");
 		
+		if(tval.length > 160) {
+			tval = tval.substring(0,set-1);
+			$(textarea).val(tval);
+			remain = 0;
+		}
+		
 		//shorten text to allotted amount
-		$(countdown).text(remain);
-		if (remain <= 0 && e.which !== 0 && e.charCode !== 0) {
+		if (remain < 0 && e.which !== 0 && e.charCode !== 0) {
 			$(textarea).val((tval).substring(0, set-1))
 			$(countdown).prepend('<span class="error">No more characters allowed</span>');
+			remain = 0;
 		}
+		
+		$(countdown).text(remain);
 	}
 	
 
@@ -227,18 +237,29 @@ $(document).ready(function() {
 		var overlay = $(this).find(".imgOverlay");
 		$(overlay).fadeOut(300);
 	});
-	$(".workImg").click(function(e) {
+	$(".workImg, .viewMore").click(function(e) {
 		e.preventDefault();
+	
 		var detailsWrapper = "#"+$(this).attr("rel")+"Details";
 		var arrow = $(this).parent().find('.workArrow');
+		
+		if($(this).attr("class") == "viewMore") {
+			arrow = $(this).parent().parent().find('.workArrow');
+		}
 		
 		$(arrow).show({
 			"complete":function() {				
 				$(detailsWrapper).fadeIn();
 			}
-		});
-		
+		});	
+	});
 	
-		
+	$(".workDetailsWrapper .closeWork").click(function() {
+		var scrollTop = $(this).offset().top - 350;
+		console.log($(this).scrollTop());
+		$(".workArrow").fadeOut('fast');
+		$(".workDetailsWrapper").fadeOut('fast');
+		$('html, body').animate({scrollTop:scrollTop}, 1000);
+		return false;
 	});
 });
