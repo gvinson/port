@@ -40,7 +40,6 @@ $(document).ready(function() {
 		{
 			var goToID = $(this).attr("id").substring(0,$(this).attr("id").length-4);
 			smoothScroll(goToID);
-			console.log(goToID);
 		}
 		else {
 			if(!contactShow) {
@@ -62,40 +61,70 @@ $(document).ready(function() {
 		target = "#" + target;
 		var targetOffset = $(target).offset().top-50;
 		$('html, body').animate({scrollTop: targetOffset}, 400);
-		console.log(target + " " + targetOffset);
 	}
 		
 	//Phone number clicked to send a text
 	//Show popover
-	$(".contactLink #phoneNumber").click(function(e) {
-		if(popoverShow) {
-			popoverShow = false;
-			$("#textMessageWrapper").slideUp('fast');
-			var result = $("#textMessageWrapper").find(".result");
-			$(result).hide();
-		}
-		else {
-			popoverShow = true;
-			$("#textMessageWrapper").fadeIn('fast');
-		}
-		e.stopPropagation();
-	});
-	//Email address clicked to send an email
-	//Show popover
-	$(".contactLink #emailAddress").click(function(e) {
-		if(popoverShow) {
-			popoverShow = false;
-			$("#emailWrapper").slideUp('fast');
-			var result = $("#emailWrapper").find(".result");
-			$(result).hide();
-		}
-		else {
-			popoverShow = true;
-			$("#emailWrapper").fadeIn('fast');
-		}
-		e.stopPropagation();
-	});
-	
+	if(document.documentElement.clientWidth > 1240) {
+		$(".contactLink #phoneNumber").click(function(e) {
+			if(popoverShow) {
+				popoverShow = false;
+				$("#textMessageWrapper").slideUp('fast');
+				var result = $("#textMessageWrapper").find(".result");
+				$(result).hide();
+			}
+			else {
+				popoverShow = true;
+				$("#textMessageWrapper").fadeIn('fast');
+			}
+			e.stopPropagation();
+		});
+		//Email address clicked to send an email
+		//Show popover
+		$(".contactLink #emailAddress").click(function(e) {
+			if(popoverShow) {
+				popoverShow = false;
+				$("#emailWrapper").slideUp('fast');
+				var result = $("#emailWrapper").find(".result");
+				$(result).hide();
+			}
+			else {
+				popoverShow = true;
+				$("#emailWrapper").fadeIn('fast');
+			}
+			e.stopPropagation();
+		});
+	}
+	else {
+		$(".contactLink #phoneNumber").click(function(e) {
+			if(modalShow) {
+				modalShow = false;
+				$("#modal_text").slideUp('fast');
+				var result = $("#modal_text").find(".result");
+				$(result).hide();
+			}
+			else {
+				modalShow = true;
+				$("#modal_text").fadeIn('fast');
+			}
+			e.stopPropagation();
+		});
+		//Email address clicked to send an email
+		//Show modal
+		$(".contactLink #emailAddress").click(function(e) {
+			if(modalShow) {
+				modalShow = false;
+				$("#modal_email").slideUp('fast');
+				var result = $("#modal_email").find(".result");
+				$(result).hide();
+			}
+			else {
+				modalShow = true;
+				$("#modal_email").fadeIn('fast');
+			}
+			e.stopPropagation();
+		});
+	}
 	//Close modal if document is clicked outside of modal
 	$(document).mousedown(function (e) {
         var modalWrapper = $(".modalWrapper"), //modal
@@ -206,7 +235,6 @@ $(document).ready(function() {
 	//Monitor text message size
 	$("#textMessage, #modal_textMessage").keyup(function(e) {
 		checkLength($(this),e);
-		console.log(e.keyCode);
 	});
 	$("#textMessage, #modal_textMessage").change(function(e) {
 		checkLength($(this),e);
@@ -218,7 +246,6 @@ $(document).ready(function() {
 			set = 160,
 			remain = parseInt(set - tlength),
 			countdown = $("#countdown");
-		console.log(e.keyPress);
 		//check to see if modal is active or popover
 		if($(textarea).attr("id") == "modal_textMessage")
 				countdown = $("#modal_countdown");

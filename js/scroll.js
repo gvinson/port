@@ -17,25 +17,43 @@ $(document).ready(function() {
 				if(i!=0)
 					yOffset = 500;	//yOffset for posts section
 
-				if( y > (h*.25) && y < (h) ){
-					// if we are show sectionTitle
-					var marginTop = ($('#'+sectionTitles[i]).parent().offset().top-200)*(-1);
+				if(document.documentElement.clientWidth > 1240) {
+					if( y > (h*.25) && y < (h) ){
+						// if we are show sectionTitle
+						var marginTop = ($('#'+sectionTitles[i]).parent().offset().top-200)*(-1);
+							
+						$('#'+sectionTitles[i]).fadeIn(300).css({
+							"position":"fixed",
+							"margin-top": marginTop
+						});
+					} else {
+						$('#'+sectionTitles[i]).fadeOut(300);
+					}
+				} 
+				else {
+					if( y > (h*.2) && y < (h) )
+					{
+						var marginLeft = $("#"+sectionTitles[i]).parent().find(".wrapper");
+						marginLeft = marginLeft.offset().left;
 						
-					 $('#'+sectionTitles[i]).fadeIn(300).css({
-						"position":"fixed",
-						"margin-top": marginTop
-					});
-				} else {
-					$('#'+sectionTitles[i]).fadeOut(300);
+						$('#'+sectionTitles[i]).fadeIn(300).css({
+							"margin-left":marginLeft
+						});
+					}
+					else
+						$('#'+sectionTitles[i]).fadeOut(300);
+					
 				}
 			}
 			
 			//display scrollToTop link when at work section
+			if(document.documentElement.clientWidth > 1240) {
 			if($(window).scrollTop() >=  $("#workWrapper").offset().top-50) {
 				$("#backToTop").fadeIn();
 			}
 			else {
 				$("#backToTop").fadeOut();
+			}
 			}
 		 });
 	}
