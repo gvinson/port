@@ -483,7 +483,8 @@ margin: 0 auto;
 margin-bottom: 5em;
 }
 .work {
-	padding: 2em 0;
+	padding: 3em 0;
+	padding-bottom: 0;
 	width: 980px;
 	min-width: 980px;
 	max-width: 1050px;
@@ -623,7 +624,7 @@ margin-bottom: 5em;
 }
 .workDetailsWrapper .closeWork {
 	position: absolute;
-	top: 15px;
+	top: 1em;
 	left: 95%;
 	font-family: 'Verdana', 'Helvetica';
 	color: #fdfdfd;
@@ -703,6 +704,10 @@ margin-bottom: 5em;
 	-webkit-transform: none;
 	-ms-transform: none;
 	transform: none;
+}
+.workArrow {
+	width: 100% !important;
+	border: 0px solid #222 !important;
 }
 }
 

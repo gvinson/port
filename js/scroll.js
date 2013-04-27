@@ -12,7 +12,7 @@ $(document).ready(function() {
 			for(var i=0; i < sectionTitles.length; i++) {		
 				var yOffset = 600;	//yOffset for works section
 				var h = $('#'+sectionTitles[i]).parent().height();	//height of section scrolling past
-				var y = $(window).scrollTop() - $("#" + sectionTitles[i]).parent().offset().top+yOffset; //height to top
+				var y = $(window).scrollTop() - $("#" + sectionTitles[i]).parent().offset().top+yOffset+(document.documentElement.clientHeight*.05); //height to top
 				
 				if(i!=0)
 					yOffset = 500;	//yOffset for posts section

@@ -1,10 +1,14 @@
-::::::::::::::::::::::::::::::::::::TO-DO LIST:::::::::::::::::::::::::::::::::::::::
+Decide on PHP or .NET
 
-	Maybe have contactWrapper fold corners into center to form paper airplane tip
-	and then slide up. (form a paper airplane....?)
-	
-	Add portfolio images to portfolio section
-	
-	Style the images for the portfolio section a little better
-	(need new ideas for the layout of this section)
-	
+Create page for entire blog post that also includes section for comments and social networking
+
+load more posts like facebook feed or tumblr dashboard
+
+create favicon - paper airplane
+
+write out text for each "work"
+
+create horizontally long image (960px w by 250px tall or something, tall and skinny) that goes
+below the post title but above the text or above the title.
+
+maybe seperate blog posts like works are with horizontal bar.

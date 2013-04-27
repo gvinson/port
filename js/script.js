@@ -8,12 +8,13 @@ $(document).ready(function() {
 		
 	//top nav img hovers
 	$("#topNav ul li").hover(function() {
-		$(".topNavText").remove();
-		var textDiv = $(this).children('a').children('div');
+		$(".topNavText").remove(); //remove title of link on left side of nav
+		var textDiv = $(this).children('a').children('div'); //find the text for that link
 		var text = $(textDiv).text();
 		var img = $(this).children('a').children("img");
 		$(img).css("opacity",".75");
 		
+		//create li element to hold text
 		var li = document.createElement("li");
 		$(li).attr("class", "topNavText");
 		$(li).css("margin-left","-"+$(text).width);
@@ -38,6 +39,7 @@ $(document).ready(function() {
 		
 		if($(this).attr("id") != "contactLink")
 		{
+			//get id to scroll to and scroll to it
 			var goToID = $(this).attr("id").substring(0,$(this).attr("id").length-4);
 			smoothScroll(goToID);
 		}
@@ -57,9 +59,10 @@ $(document).ready(function() {
 		}
 	});
 	
+	//scroll to target 
 	function smoothScroll(target) {
 		target = "#" + target;
-		var targetOffset = $(target).offset().top-50;
+		var targetOffset = $(target).offset().top-(document.documentElement.clientHeight*.15);
 		$('html, body').animate({scrollTop: targetOffset}, 400);
 	}
 		
@@ -240,6 +243,7 @@ $(document).ready(function() {
 		checkLength($(this),e);
 	});
 
+	//Check length of text messages
 	function checkLength(textarea,e) {
 		var tval = $(textarea).val(),
 			tlength = tval.length,
@@ -278,9 +282,12 @@ $(document).ready(function() {
 		var overlay = $(this).find(".imgOverlay");
 		$(overlay).fadeOut(300);
 	});
+	
+	//Portfolio image/view more link clicks
 	$(".workImg, .viewMore").click(function(e) {
 		e.preventDefault();
-	
+		
+		//find details of project and arrow
 		var detailsWrapper = "#"+$(this).attr("rel")+"Details";
 		var arrow = $(this).parent().find('.workArrow');
 		
@@ -288,16 +295,45 @@ $(document).ready(function() {
 			arrow = $(this).parent().parent().find('.workArrow');
 		}
 		
-		$(arrow).show({
-			"complete":function() {				
-				$(detailsWrapper).fadeIn();
+		//move details and arrow off screen, this allows the 
+		//height of the div to be there and allowing it to slide in
+		$(detailsWrapper).css("margin-left","-250%").slideDown();
+		$(arrow).css({
+			"margin-left":"-250%",
+			"margin-right":"250%"
+		}).slideDown();
+		
+		//area between top of arrow and top of document
+		var offset = $(arrow).offset().top;
+		
+		//slide in details and scroll down to it.
+		$(detailsWrapper).add($(arrow)).animate({
+			"margin": "0"
+		}, {
+			"duration":220,
+			"complete": function() {
+				$("html,body").animate({"scrollTop":offset},
+					{
+						"duration":500,
+						"easing":"easeOutQuint"
+					});
+				console.log($(window).scrollTop());
 			}
-		});	
+		});
+		
+		//Make the close button fixed if the details wrapper is
+		//on the screen
+		if(($(window).scrollTop() <= $(arrow).offset().top)) {
+			$(".closeWork").css("position","fixed");
+		}
+		else {
+			$(".closeWork").css("positoin","absolute");
+		}
 	});
 	
 	//Close button for workDetailsWrapper (White x in upper right corner)
 	$(".workDetailsWrapper .closeWork").click(function() {
-		var scrollTop = $(this).offset().top - 350;
+		var scrollTop = $(this).parent().offset().top - 350;
 		$(".workArrow").fadeOut('fast');
 		$(".workDetailsWrapper").fadeOut('fast');
 		$('html, body').animate({scrollTop:scrollTop}, 400);
