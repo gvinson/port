@@ -8,8 +8,14 @@ body {
 	font-weight: 400;  
 	overflow-x: hidden;
 }
-p { text-shadow: none !important; }
+p { text-shadow: none !important; line-height: 160%; }
 img { border: none; }
+img,
+embed,
+object,
+video {
+  max-width: 100%;
+}
 .wrapper {
 	width: 980px;
 	margin: 0 auto;
@@ -244,13 +250,17 @@ img { border: none; }
 .postContent {
 	font-family: 'Open Sans', 'Helvetica', Arial, sans-serif;
 	font-size: 1em;
-	line-height: 170%;
+	line-height: 180%;
 	margin-left: 60px;
 	text-indent: 1em;
 }
 .post .viewMore {
-	margin-left: 60px;
-	margin-top: 2em;
+	float: right;
+	margin-right: 2%;
+	z-index: 10 !important;
+}
+.post .postHeaderImg {
+	width: 100%;
 }
 .actionsWrapper {
 	display: inline-block;
@@ -691,26 +701,27 @@ margin-bottom: 5em;
 	height: 200px;
 	width: 505px;
 }
-.scrollTopWrapper {
-	width: 100%;
-	margin: 0 auto;
-	bottom: 50px;
-	position: fixed;
-}
-.scrollTopWrapper #backToTop {
+#backToTop {
 	width: 45px;
 	height: 73px;
 	background: url("../img/scrollToTop.png") top left no-repeat Transparent;
 	float: right;
-	margin-right: 5%;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 	filter: alpha(opacity=50);
 	-moz-opacity: 0.5;
 	-khtml-opacity: 0.5;
 	opacity: 0.5;
 	display: none;
+	z-index: 1;
+	position: fixed;
+	bottom: 6%;
+	right: 6%;
+	-webkit-transition: all .25s ease-in-out;
+	-moz-transition: all .25s ease-in-out;
+	-o-transition: all .25s ease-in-out;
+	transition: all .25s ease-in-out;
 }
-.scrollTopWrapper #backToTop:hover {
+#backToTop:hover {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 	filter: alpha(opacity=100);
 	-moz-opacity:1;
@@ -720,8 +731,8 @@ margin-bottom: 5em;
 }
 @media all and (max-width: 1440px) and (min-width: 1340px) {
 .sectionTitle {
-	font-size: 15em !important;
-	margin-left: -.6em;
+	font-size: 13em !important;
+	margin-left: -.84em;
 }
 }
 @media all and (max-width: 1340px) and (min-width: 1240px) {
