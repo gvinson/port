@@ -9,6 +9,7 @@ $(document).ready(function() {
 		});
 		//show/hide section titles depending on position on site
 		$(window).scroll(function(){
+			//Show section titles when viewing that section
 			for(var i=0; i < sectionTitles.length; i++) {		
 				var yOffset = 600;	//yOffset for works section
 				var h = $('#'+sectionTitles[i]).parent().height();	//height of section scrolling past
@@ -48,7 +49,7 @@ $(document).ready(function() {
 			
 			//display scrollToTop link when at work section
 			if(document.documentElement.clientWidth > 1240) {
-			if($(window).scrollTop() >=  $("#workWrapper").offset().top-50) {
+			if($(window).scrollTop() >=  $("#workWrapper").offset().top-(document.documentElement.clientHeight*.15)-5) {
 				$("#backToTop").fadeIn();
 			}
 			else {
