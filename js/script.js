@@ -62,7 +62,11 @@ $(document).ready(function() {
 	//scroll to target 
 	function smoothScroll(target) {
 		target = "#" + target;
-		var targetOffset = $(target).offset().top-(document.documentElement.clientHeight*.15);
+		var targetOffset;
+		if(document.documentElement.clientWidth > 1240) 
+			targetOffset = $(target).offset().top-(document.documentElement.clientHeight*.05);
+		else
+			targetOffset = $(target).offset().top-(document.documentElement.clientHeight*.15);
 		$('html, body').animate({scrollTop: targetOffset}, 400);
 	}
 		

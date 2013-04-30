@@ -51,7 +51,14 @@
 	float: left;
 }
 .sectionTitle {
-	position: relative;
-	margin-top: -75px !important;
 	color: #aaa !important;
+	margin: 0 !important;
+	margin-bottom: .2em;
+	height: auto !important;
+	position: static !important;
+	height: auto;
+}
+.sectionTitleWrapper {
+	width: 980px !important;
+	margin: 0 auto !important;
 }
