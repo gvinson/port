@@ -726,18 +726,6 @@ margin-bottom: 5em;
 	height: 200px;
 	width: 505px;
 }
-.activeSection {
-	height:1em;
-	background-color:#ffffff;
-	position:fixed !important;
-	z-index:50;
-	top:1em;
-	padding-bottom:.1em;
-}
-.fixed {
-	position: fixed;
-	top: 10px;
-}
 #backToTop {
 	width: 45px;
 	height: 73px;
