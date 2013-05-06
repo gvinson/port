@@ -171,7 +171,7 @@ video {
 	color: #3c3c3c;
 	text-shadow: 2px 2px 2px #aaa;
 }
-#logo #logoTag {
+#logoTag {
 	font-size: .5em;
 	line-height: .6em;
 	text-align: right;
@@ -615,7 +615,7 @@ margin-bottom: 5em;
 .period {
 	color: #dd4b39;
 }
-#workWrapper hr {
+hr {
 	border: none;
 	height: 3px;
 	background: url("../img/vertStripe.png") top left repeat-x #fdfdfd;
@@ -725,6 +725,18 @@ margin-bottom: 5em;
 	display: none;
 	height: 200px;
 	width: 505px;
+}
+.activeSection {
+	height:1em;
+	background-color:#ffffff;
+	position:fixed !important;
+	z-index:50;
+	top:1em;
+	padding-bottom:.1em;
+}
+.fixed {
+	position: fixed;
+	top: 10px;
 }
 #backToTop {
 	width: 45px;
