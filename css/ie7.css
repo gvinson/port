@@ -1,3 +1,6 @@
+#wrapper {
+	width: 980px;
+}
 #saying {
 	margin-bottom: .75em !important;
 	width: 960px;

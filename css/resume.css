@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Monda);
 #logoTag {
 	font-size: .6em;
 	margin-top: .25em;
@@ -5,9 +6,12 @@
 #contactInfo {
 	text-align: right;
 	text-shadow: none;
-	padding-top: .75em;
-	line-height: 150% !important;
+	line-height: 175% !important;
 	font: 13px/19px 'Open Sans', 'Helvetica', Arial, sans-serif;
+}
+#contactInfo  b{
+	font-weight: bold;
+	text-decoration: underline;
 }
 body {
 	border-top: 3px solid #dd4b39;
@@ -17,18 +21,32 @@ body {
 p, ul, li {
 	font-size: 1em;
 	line-height: 150%;
-	font-family: 'Open Sans', 'Helvetica', Arial, sans serif;
+	font-family: 'Open Sans', 'Helvetica', Arial, sans-serif;
 	font-weight: 400;
 	text-shadow: none;
 }
+ul {
+	list-style-type: square;
+}
 #tagLine {
-	font-style: italic;
 	text-align: center;
-	margin: 4em auto 4.5em auto;
-	font-size: 1.25em;
-	line-height: 175%;
-	width: 75%;
-
+	margin: 3em auto;
+	line-height: 200%;
+	width: 79%;
+	font-family: 'Monda', sans-serif;
+	text-shadow: none;
+	font-weight: 100;
+	font-size: 2em;
+	color: #5a5a5a;
+}
+#tagLine b {
+	font-weight: normal;
+	font-family: "Bebas";
+	font-size: 2em;
+	color: #4a4a4a;
+	text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+	position: relative;
+	top: 0.125em;
 }
 .job, .school {
 	margin-left: 3.5em;
@@ -38,8 +56,24 @@ p, ul, li {
 	font: 14px/19px 'Open Sans', 'Helvetica', Arial, sans-serif;
 	margin-bottom: 2.5em;
 }
-
-.location, .position, .timeFrame, .gpa {
+.job h3 {
+	display: inline;
+	margin-right: .85em;
+}
+.job a {
+	color: #666;
+	font-style: italic;
+	font-size: .85em;
+	text-decoration: none;
+}
+.job a:hover {
+	color: rgb(65, 143, 204);
+	text-decoration: underline;
+}
+.job .position {
+	margin-top: .5em;
+}
+.location, .position, .timeFrame {
 	font-size: 1em;
 	color: #666;
 }
@@ -81,30 +115,23 @@ h3 {
 	text-shadow: none;
 }
 .left {
-	width: 70%;
+	width: 65%;
 	float: left;
-	margin-right: 3%;
+	padding-right: 2em;
+	border-right: 1px solid #eee;
 }
 .right {
-	width: 20%;
+	width: 28%;
 	float: right;
 	padding-left: 1em;
-	border-left: 1px solid #eee;
+}
+.striped {
+	margin: auto 1.5em;
+	padding: 1em;
+	background: url("../img/vertStripe.png") top left repeat #fdfdfd;
 }
 .skills {
-	margin-left: 1em;
-	padding-left: 1em;
-	padding-top: .25em;
-	background: url("../img/vertStripe.png") top left repeat #fdfdfd;
-	width: 120%;
-	padding-bottom: 1em;
-}
-.skills h3 {
-	margin-left: auto;
-	background-color: #fdfdfd;
-	padding: 3px;
-	width: 6em;
-	float: left;
+	margin-bottom: 3em;
 }
 .skills ul li {
 	margin-left: .5em;	
@@ -115,18 +142,23 @@ h3 {
 	padding: 0;
 	list-style-type: none;
 }
-
 .skills ul li
 {
 	margin-bottom: .5em;
 	padding: .2em 0em .2em .5em;
 	background: #dd4b39;
 	color: #fff;
-	font-family: 'Open Sans';
+	font-family: 'Kelly Slab';
 	letter-spacing: 1px;
+	font-weight: 400;
+	text-shadow: 2px 1px 1px rgba(0,0,0,0.2);
+}
+.skills ul#frontend {
+	border-bottom: 5px solid #fff;
+	margin-bottom: .5em;
 }
 .skills ul#backend li{
-	background-color: rgb(194, 26, 26) !important;
+	background-color: rgb(180, 59, 59) !important;
 }
 .skills ul li.ninety {
 	width: 90%;
@@ -142,4 +174,140 @@ h3 {
 }
 .skills ul li.fifty {
 	width: 50%;
+}
+#education {
+	font-size: .85em;
+	text-shadow: none;
+}
+#education #school {
+	margin-left: .4em;
+	font-size: 1em;
+}
+#education  #timeFrame, #education #gpa{
+	margin-left: .5em;
+	font-size: .85em;
+	color: #666;
+}
+#education #degrees {
+	margin-left: 0em;
+}
+.mobile {
+	display: none;
+}
+
+
+
+
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (max-width : 480px) {
+body {
+	font-size: 12pt;
+}
+#logo {
+
+	font-size: 3em;
+	text-align: center;
+}
+#logo #logoTag {
+	text-align: right;
+	margin-right: .2em;
+}
+#contactInfo, #tagLine, hr {
+	display: none;
+}
+#mobileTagLine {
+	display: block;
+	position: relative;
+	top: 4em;
+	text-align: center;
+	clear: both;
+	padding-bottom: 8em;
+}
+#mobileTagLine #create {
+	font-family: 'Kelly Slab';
+	font-size: 3em;
+}
+#mobileTagLine #theWeb, #mobileTagLine #period {
+	font-family: 'Bebas';
+	font-size: 3.25em;
+	margin-left: .05em;
+}
+#mobileTagLine #period {
+	color: #dd4b39;
+	margin-left: 0em;
+}
+.left, .right {
+	float: none;
+	width: 100%;
+	border: none;
+	padding: 0; margin: 0;
+}
+#education {
+	margin-bottom: 3em;
+}
+article {
+	margin-left: 1em !important;
+}
+h3 {
+	margin-left: 0 !important;
+}
+.workDescription {
+	margin-left: 0em !important;
+	margin-right: .75em;
+}
+.mobile {
+	display: block;
+}
+#mobileContact {
+	text-align: center;
+	font-size: 0.7em;
+	text-shadow: none;
+	margin-bottom: 1em;
+}
+#mobileContact ul {
+	list-style: none;
+	display: table;
+	width: 100%;
+	padding-left: 0;
+}
+#mobileContact ul li {
+	display: table-cell;
+}
+}
+
+
+/*  --------- */
+@media only screen
+and (min-width : 481px)
+and (max-width : 767px) {
+
+}
+
+/* Smaller Desktops and laptops --------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px) {
+#tagLine {
+	font-size: 1.75em;
+}
+.left {
+	padding-right: 1em;
+}
+.right {
+	padding-left: .5em;
+	width: 31%;
+}
+}
+
+/* Medium Desktops and Laptops ------------ */
+@media all and (max-width: 1239px) {
+#logo {
+	margin-left: .25em;
+}
+#contactInfo {
+	margin-right: .35em;
+}
 }

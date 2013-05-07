@@ -1,9 +1,27 @@
 http://www.oria.be/
-
 I like the top nav scrolling function when you scroll down. also think about making a better slide show instead of the "create the web" shit. and just have create the web under my name
 
-
-
 http://www.orangecrush.ro/work/love-speeder/
-
 Check out the section bottom borders. Maybe do something like that if you decide to split the sections by color and what not. (single page design)
+
+
+<h2>ABOUT ME</h2>
+<p>
+	I <b>will</b> become a web leader, thats all there is to it. The web is 
+	what I am passionate about, everything from graphics and videos to reports 
+	and databases. I do it all, but I prefer front end development; I am a 
+	sucker for watching designs and ideas come to life.
+</p>
+<p>
+	I was introduced into the world of web development at the age of 13 but I 
+	did not know that I could do this for the rest of my life. So, I became a 
+	musician and started a few bands, released a few albums, went on a few US
+	tours, signed on with a few record labels; it was great, best childhood you
+	could ask for. 
+</p>
+
+Fix IE 8 "sectionTitles"
+
+Remove "px" and convert to "em" or "%" in all style sheets
+
+Work on #header width for responsive
