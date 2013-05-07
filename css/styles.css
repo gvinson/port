@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Kelly+Slab);
+
 body { 
 	padding: 0; 
 	margin: 0; 
@@ -12,7 +13,7 @@ p {
 	text-shadow: none !important; 
 	line-height: 160%; 
 }
-p::selection {
+*::selection {
 	background-color: #ebff00;
 }
 img { border: none; }
@@ -171,7 +172,7 @@ video {
 	color: #3c3c3c;
 	text-shadow: 2px 2px 2px #aaa;
 }
-#logoTag {
+#logo #logoTag {
 	font-size: .5em;
 	line-height: .6em;
 	text-align: right;
@@ -258,17 +259,20 @@ video {
 }
 .post .cite {
 	width: 30%;
-	line-height: 220%;
 	font-style: italic;
 	font-family: Times New Roman;
-	color: #888;
+	font-size: 1.5em;
+	line-height: 1.9em;
+	color: #777;
 }
 .post .citeName {
 	font-style: normal;
 	font-family: 'Bebas';
 	letter-spacing: 1px;
-	font-size: 1.2em;
-	color: #777;
+	font-size: .75em;
+	color: #aaa;
+	float: right;
+	line-height: 1em;
 }
 .post .right { 
 	float: right;
@@ -431,7 +435,7 @@ animation:slideInRight 400ms;
 .popover
 {
     position: absolute;
-	margin-top: -1.85em;
+	margin-top: -2.65em;
 	margin-left: 6.25em;
 	z-index: 1010;
 	display: block;
@@ -463,6 +467,7 @@ animation:slideInRight 400ms;
 	margin-top: -1.95em;
 	border-right-color: #444;
 	border-left-width: 0;
+	display: none !important;
 }
 .popover .arrow
 {
@@ -570,14 +575,14 @@ margin-bottom: 5em;
 .work .workImg {
 	float: left; 
 	margin-right: 15px;
-	width: 35%;
+	width: 51.25%;
 	overflow: hidden;
 	outline: 0;
 	text-decoration: none;
 }
 .work .workContentWrapper {
 	float: right; 
-	width: 62%;
+	width: 46%;
 }
 .work .workTitle {
 	float: left;
@@ -615,7 +620,7 @@ margin-bottom: 5em;
 .period {
 	color: #dd4b39;
 }
-hr {
+#workWrapper hr {
 	border: none;
 	height: 3px;
 	background: url("../img/vertStripe.png") top left repeat-x #fdfdfd;
@@ -626,8 +631,8 @@ hr {
 	padding-bottom: 4em;
 }
 .work .workImg .imgOverlay {
-	width: 332px !important;
-	height: 215px !important;
+	width: 500px !important;
+	height: 273px !important;
 	background: url("../img/modalBG.png") top left repeat;
 	color: #eee;
 	font-family: 'Bebas';
@@ -642,13 +647,12 @@ hr {
 }
 .work .workImg img:hover {
 	cursor: pointer;
-	
 }
 .work .workImg ul {
 	list-style: none;
 	display: table;
 	padding: 0;
-	width: 98%;
+	width: 100%;
 	margin: 0px;
 }
 .work .workImg ul li {
@@ -720,23 +724,12 @@ hr {
 	-moz-transform: rotate(90deg);
 	-o-transform: rotate(90deg);
 	-webkit-transform: rotate(90deg);
+	-webkit-backface-visibility: hidden;
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
 	display: none;
 	height: 200px;
 	width: 505px;
-}
-.activeSection {
-	height:1em;
-	background-color:#ffffff;
-	position:fixed !important;
-	z-index:50;
-	top:1em;
-	padding-bottom:.1em;
-}
-.fixed {
-	position: fixed;
-	top: 10px;
 }
 #backToTop {
 	width: 45px;
@@ -779,7 +772,7 @@ hr {
 	color: #ededed;
 }
 }
-@media all and (max-width: 1239px) and (min-width: 990px) {
+@media all and (max-width: 1239px) {
 .sectionTitle {
 	font-size: 4em;
 	letter-spacing: 5px;

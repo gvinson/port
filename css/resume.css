@@ -1,0 +1,145 @@
+#logoTag {
+	font-size: .6em;
+	margin-top: .25em;
+}
+#contactInfo {
+	text-align: right;
+	text-shadow: none;
+	padding-top: .75em;
+	line-height: 150% !important;
+	font: 13px/19px 'Open Sans', 'Helvetica', Arial, sans-serif;
+}
+body {
+	border-top: 3px solid #dd4b39;
+	padding-top: 1em;
+	color: #333;
+}
+p, ul, li {
+	font-size: 1em;
+	line-height: 150%;
+	font-family: 'Open Sans', 'Helvetica', Arial, sans serif;
+	font-weight: 400;
+	text-shadow: none;
+}
+#tagLine {
+	font-style: italic;
+	text-align: center;
+	margin: 4em auto 4.5em auto;
+	font-size: 1.25em;
+	line-height: 175%;
+	width: 75%;
+
+}
+.job, .school {
+	margin-left: 3.5em;
+	margin-top: 1em;
+	text-shadow: none;
+	line-height: 150%;
+	font: 14px/19px 'Open Sans', 'Helvetica', Arial, sans-serif;
+	margin-bottom: 2.5em;
+}
+
+.location, .position, .timeFrame, .gpa {
+	font-size: 1em;
+	color: #666;
+}
+.location {
+	font-style: italic;
+}
+.workDescription {
+	margin-left: 1em;
+	margin-top: .5em;
+}
+.workDescription li {
+	line-height: 175% !important;
+}
+hr {
+	width: 100%;
+	min-width: auto;
+	max-width: auto;
+	padding-bottom: .1em;
+	margin-top: .15em;
+	border: none;
+	height: 3px;
+	background: url("../img/vertStripe.png") top left repeat-x #fdfdfd;
+	margin-left: -.2em;
+}
+h2 {
+	width: 10em;
+	margin-bottom: 0;
+	font-family: 'Bebas';
+	color: #dd4b39;
+	font-size: 2em;
+	letter-spacing: 1px;
+	padding-left: .2em;
+}
+h3 {
+	font-weight: bold;
+	font-family: 'Open Sans', 'Helvetica', Arial;
+	margin-left: -1.5em;
+	margin-bottom: .2em;
+	text-shadow: none;
+}
+.left {
+	width: 70%;
+	float: left;
+	margin-right: 3%;
+}
+.right {
+	width: 20%;
+	float: right;
+	padding-left: 1em;
+	border-left: 1px solid #eee;
+}
+.skills {
+	margin-left: 1em;
+	padding-left: 1em;
+	padding-top: .25em;
+	background: url("../img/vertStripe.png") top left repeat #fdfdfd;
+	width: 120%;
+	padding-bottom: 1em;
+}
+.skills h3 {
+	margin-left: auto;
+	background-color: #fdfdfd;
+	padding: 3px;
+	width: 6em;
+	float: left;
+}
+.skills ul li {
+	margin-left: .5em;	
+}
+.skills ul
+{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.skills ul li
+{
+	margin-bottom: .5em;
+	padding: .2em 0em .2em .5em;
+	background: #dd4b39;
+	color: #fff;
+	font-family: 'Open Sans';
+	letter-spacing: 1px;
+}
+.skills ul#backend li{
+	background-color: rgb(194, 26, 26) !important;
+}
+.skills ul li.ninety {
+	width: 90%;
+}
+.skills ul li.eighty-five {
+	width: 85%;
+}
+.skills ul li.seventy {
+	width: 70%;
+}
+.skills ul li.sixty {
+	width: 60%;
+}
+.skills ul li.fifty {
+	width: 50%;
+}
