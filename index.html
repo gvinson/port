@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 <title>Grant Vinson</title>
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/fonts/fonts.css">
@@ -75,6 +76,8 @@
 </div>
 
 <div id="headerWrapper">
+	<div id="dimensions" style="float: right; text-align: right;"></div>
+	<a href="#" id="pull"><img src="img/icons/mobile_nav_off.png" alt="Menu"></a>
 	<header id="header">
 		<div id="logo">
 			Grant Vinson
@@ -82,11 +85,11 @@
 			web do-er
 			</div>
 		</div>
-		<nav id="topNav">
-			<ul>
+		<nav id="topNav" class="clearfix">
+			<ul class="clearfix">
 				<li><a id="workWrapperLink" href="#"><img src="img/icons/port.png"><div>Work</div></a></li>
 				<li><a id="blogWrapperLink" href="#"><img src="img/icons/blog_off.png"><div>Blog</div></a></li>
-				<li><a id="contactLink" href="#"><img src="img/icons/contact_off.png"><div style="margin-left: -10px;">Contact</div></a></li>
+				<li><a id="contactLink" href="#"><img src="img/icons/contact_off.png"><div>Contact</div></a></li>
 			</ul>
 		</nav>
 	</header>
@@ -100,7 +103,7 @@
 			</div>
 			<div id="actions" style="float: right; text-align: right !important;">
 				<div>create</div>
-				<div>play with</div>
+				<div id="playWith">play with</div>
 				<div>control</div>
 				<div>destroy</div>
 			</div>
@@ -131,7 +134,7 @@
 				
 			</div>
 			<div class="workContentWrapper">
-				<div class="workTitle" style="clear: both;">
+				<div class="workTitle">
 					<h3>PunkAid.org<span class="period">.</span></h3>
 					<div class="workType">Web Design</div>
 				</div>
@@ -300,7 +303,7 @@
 		</div>
 	</div>
 </section>
-<section id="blogWrapper" style="margin-top: 10em;">
+<section id="blogWrapper">
 	<div class="sectionTitleWrapper" >
 		<div class="sectionTitle" id="blogSectionTitle">
 					BLOG
@@ -432,7 +435,6 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
-
 <!--[if !IE]> -->
 	<script type="text/javascript" src="js/scroll.js"></script>
 <!-- <![endif]-->

@@ -1,4 +1,3 @@
-
 body { 
 	padding: 0; 
 	margin: 0; 
@@ -21,6 +20,7 @@ embed,
 object,
 video {
   max-width: 100%;
+  height: auto;
 }
 .wrapper {
 	max-width: 980px;
@@ -154,6 +154,12 @@ video {
 #topNav ul li a div {
 	display: none;
 }
+#topNav #contactLink div {
+	margin-left: -10px;
+}
+a#pull {
+	display: none;
+}
 .topNavText { 
 	display: none;
 	line-height: 125%; 
@@ -185,6 +191,9 @@ video {
 	zoom: 1;
 }
 #contentWrapper {
+	margin-top: 10em;
+}
+#blogWrapper {
 	margin-top: 10em;
 }
 .post {
@@ -415,6 +424,17 @@ animation:slideInRight 400ms;
 	font-size: .8em;
 	font-style: italic;
 }
+.clearfix:before,  
+.clearfix:after {  
+    content: " ";  
+    display: table;  
+}  
+.clearfix:after {  
+    clear: both;  
+}  
+.clearfix {  
+    *zoom: 1;  
+}  
 .sendMessage {
 	width: 25px;
 	float: right;
@@ -792,7 +812,204 @@ animation:slideInRight 400ms;
 	border: 0px solid #222 !important;
 }
 }
-/* Old Desktops and Laptops ----------- */
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (max-width : 480px) {
+body {
+	font-size: 12pt;
+}
+#logo {
+	clear: both;
+	float: none;
+	font-size: 2.75em;
+	width: 5.7em;
+	text-align: center;
+	position: relative;
+	top: .3em;
+	margin: 0 auto;
+}
+#logo #logoTag {
+	text-align: right;
+	margin-right: .2em;
+}
+#pull {
+	display: block !important;
+	position: fixed;
+	z-index: 5;
+	width: 100%;
+	background-color: #fff;
+	padding: .25em;
+	padding-top: .35em;
+	padding-bottom: .05em;
+	border-top: 3px solid #dd4b39;
+}
+#headerWrapper {
+	padding: 0;
+	border-top: none;
+}
+#header {
+	width: 100%;
+}
+#topNav {
+	background-color: #e5e5e5;
+	background: url("../img/vertStripe.png") top left repeat #ddd;
+	position: fixed;
+	left: -16em;
+	height: 100%;
+	width: 15em;
+	overflow: hidden;
+	top: 0em;
+	z-index: 4;
+	border: 3px solid #dd4b39;
+	-webkit-transition: all .15s ease-in-out;
+	-moz-transition: all .15s ease-in-out;
+	-o-transition: all .15s ease-in-out;
+	transition: all .15s ease-in-out;	
+}
+#topNav ul {
+	height: auto;
+	width: 100%;
+	padding-top: 1em;
+}
+#topNav ul li {
+	clear: both;
+	zoom: 1;
+	float: none;
+	display: block;
+	font-size: 2.2em;
+	margin-left: 1.75em;
+}
+#topNav ul li img {
+	display: none;
+}
+#topNav ul li div {
+	display: block !important;
+	font-family: 'Bebas', 'Open Sans', 'Helvetica', Arial, sans-serif;
+	text-align: left;
+	float: left;
+	padding: .5em  0em .5em .25em; 
+	margin:0;
+	clear: both;
+	width: 100%;
+	border-bottom: 1px solid #aaa;
+	color: #6a6a6a;
+	letter-spacing: 1px;
+	font-weight: 700;
+	color: #3c3c3c;
+	text-shadow: 2px 2px 2px #aaa;
+}
+#topNav ul li div:hover {
+	color: #fdfdfd;
+}
+#topNav #contactLink div {
+	margin-left: 0;
+}
+#contactInfo, #tagLine, hr {
+	display: none;
+}
+.left, .right {
+	float: none;
+	width: 100%;
+	border: none;
+	padding: 0; margin: 0;
+}
+
+article {
+	margin-left: 1em !important;
+}
+h3 {
+	margin-left: 0 !important;
+}
+.workDescription {
+	margin-left: 0em !important;
+	margin-right: .75em;
+}
+.actionsWrapper #theWeb {
+	font-size: .75em;
+	margin-top: 0em;
+}
+#saying {
+	text-align: right;
+	padding-top: 0;
+	margin: 1em 0 1.75em 0;
+}
+#saying #actions {
+	height: .59em !important;
+	overflow: hidden;
+	margin-right: .1em;
+	margin-top: .175em;
+}
+#actions div {
+	font-size: .45em !important;
+}
+.work .workImg {
+	float: none;
+	width: 95%;
+	margin: 0 auto;
+}
+.workImg ul {
+	width: 95%;
+	margin: 0 auto;
+	font-size: .8em;
+}
+.work .workTitle{
+	float: none;
+	position: absolute;
+	margin-top: -14em;
+	margin-left: -.5em;
+}
+.work .workContentWrapper {
+	float: none;
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: 5em;
+}
+p {
+	font-size: 10.5pt !important;
+	line-height: 1.75em !important;
+}
+.work .workTitle h3 {
+	font-size: 1.5em;
+}
+.work .workImg .imgOverlay {
+	display: none !important;
+}
+#blogWrapper {
+	margin-top: 0em;
+}
+.sectionTitle {
+	color: #aaa !important;
+	margin: 0 !important;
+	position: static !important;
+	height: 2em;
+	display: block !important;
+}
+#blogWrapper .sectionTitle {
+	height: 1em;
+}
+}
+
+
+/*  --------- */
+@media only screen
+and (min-width : 481px)
+and (max-width : 767px) {
+
+}
+
+/* Smaller Desktops and laptops --------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px) {
+
+}
+
+/* Medium Desktops and Laptops ------------ */
+@media all and (max-width: 1239px) {
+
+}
 
 
 

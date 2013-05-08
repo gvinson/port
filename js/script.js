@@ -1,37 +1,52 @@
 $(document).ready(function() {
 	
+	ShowDimensions();
+	$(window).resize(function() {
+		ShowDimensions()
+	});
+	
 	var contactShow = false,//if contact window is shown or not
 		modalShow = false, 	//if modal window is shown or not
-		popoverShow = false, 	//if popover showing or not
+		popoverShow = false,//if popover showing or not
+		mobileNavShow = false,	//if mobile nav window is showing or now
 		curVal,				//used for current value for textboxes
-		sectionTitleShow;		//used to show/hide the section titles on scroll
+		sectionTitleShow,	//used to show/hide the section titles on scroll
+		timer,
+		clientWidth = document.documentElement.clientWidth;
 		
 	//top nav img hovers
-	$("#topNav ul li").hover(function() {
-		$(".topNavText").remove(); //remove title of link on left side of nav
-		var textDiv = $(this).children('a').children('div'); //find the text for that link
-		var text = $(textDiv).text();
-		var img = $(this).children('a').children("img");
-		$(img).css("opacity",".75");
-		
-		//create li element to hold text
-		var li = document.createElement("li");
-		$(li).attr("class", "topNavText");
-		$(li).css("margin-left","-"+$(text).width);
-		$(li).text(text);
-		//$("#home").prepend('<li class="topNavText">'+text+'</div>');
-		$("#topNav ul li:first").prepend($(li));
-		$(".topNavText").fadeIn();
-	}, function() {
-		var text = $(this).children('a').children("div");
-		var img = $(this).children('a').children("img");		
-		$(img).css("opacity","1");
-		$(".topNavText").fadeOut({
-			"complete": function(){
-					$(this).remove();
-			}
+	if(document.body.clientWidth > 480) {
+		//set #playWith text just incase it was removed on window resize
+		$("#playWith").text("play with");
+		$("#topNav ul li").hover(function() {
+			$(".topNavText").remove(); //remove title of link on left side of nav
+			var textDiv = $(this).children('a').children('div'); //find the text for that link
+			var text = $(textDiv).text();
+			var img = $(this).children('a').children("img");
+			$(img).css("opacity",".75");
+			
+			//create li element to hold text
+			var li = document.createElement("li");
+			$(li).attr("class", "topNavText");
+			$(li).css("margin-left","-"+$(text).width);
+			$(li).text(text);
+			$("#topNav ul li:first").prepend($(li));
+			$(".topNavText").fadeIn();
+		}, function() {
+			var text = $(this).children('a').children("div");
+			var img = $(this).children('a').children("img");		
+			$(img).css("opacity","1");
+			$(".topNavText").fadeOut({
+				"complete": function(){
+						$(this).remove();
+				}
+			});
 		});
-	});
+	} else {
+		//hide "play with" action, it is to damn long
+		$("#playWith").remove();
+		$(".workTitle:first").css("margin-top","-15.5em");
+	}
 	
 	//Top Navigation Click Functions
 	$("#topNav a").click(function(e) {
@@ -102,6 +117,9 @@ $(document).ready(function() {
 			e.stopPropagation();
 		});
 	}
+	else if (clientWidth <= 480) {
+		$("#modal_email").fadeIn('fast');
+	}
 	else {
 		$(".contactLink #phoneNumber").click(function(e) {
 			if(modalShow) {
@@ -132,8 +150,9 @@ $(document).ready(function() {
 			e.stopPropagation();
 		});
 	}
+	
 	//Close modal if document is clicked outside of modal
-	$(document).mousedown(function (e) {
+	$(window).mousedown(function (e) {
         var modalWrapper = $(".modalWrapper"), //modal
 			popoverWrapper = $(".popover"); //popover
 		
@@ -149,6 +168,22 @@ $(document).ready(function() {
 			var result = $(popoverWrapper).find(".result");
 			$(result).hide();
         }
+		
+		if(mobileNavShow) {	//mobile navigation is showing
+			//if the click was not in/or topNav...
+			if($("#topNav").has(e.target).length === 0 && $(e.target).attr("id") != "topNav") {
+				$("#topNav").css({
+					'left':'-16em'
+				});
+				//set timer so it function runs after the topNav has slid back -16em
+				timer = setTimeout(function() {
+					$("#pull").css({
+						"background-color":"#fff",
+					});
+					$("#pull img").attr("src",$("#pull img").attr("src").replace("_on","_off"));
+				}, 155);
+			}
+		}
     });
 
 	//Contact close button hover img swap
@@ -343,4 +378,21 @@ $(document).ready(function() {
 		$('html, body').animate({scrollTop:scrollTop}, 400);
 		return false;
 	});
+	
+	//Mobile nav icon click
+	$("#pull").click(function() {
+		$("#topNav").css("left", "-4em");
+		$("#pull").css({
+			"background-color":"Transparent",
+		});
+		$("#pull img").attr("src",$("#pull img").attr("src").replace("_off","_on"));
+		mobileNavShow = true;
+		window.clearTimeout(timer);
+	});
 });
+
+function ShowDimensions() {
+	var docHeight = document.body.clientHeight,
+		docWidth = document.body.clientWidth;
+	$("#dimensions").text(docWidth + " X " + docHeight + " \"W x H\"");
+}

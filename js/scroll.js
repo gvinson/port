@@ -30,6 +30,10 @@ $(document).ready(function() {
 						$(this).fadeOut(300);
 					}
 				} 
+				//if the screen is smaller than 481px wide (mobiles)
+				else if (document.documentElement.clientWidth < 481) {
+					$(this).show();
+				}
 				else {
 					if( y >= (h*.2) )
 					{
