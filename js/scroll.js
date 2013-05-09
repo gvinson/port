@@ -11,7 +11,7 @@ $(document).ready(function() {
 		$(window).scroll(function(){
 			//Show section titles when viewing that section
 			$(".sectionTitle").each(function(index, prevDom) {		
-				var yOffset = 600;	//yOffset for works section
+				var yOffset = 800;	//yOffset for works section
 				var h = $(this).parent().parent().height();	//height of section scrolling past
 				var y = $(window).scrollTop() - $(this).parent().parent().offset().top+yOffset+(document.documentElement.clientHeight*(.05)); //height to top
 				
@@ -39,10 +39,11 @@ $(document).ready(function() {
 					{
 						var marginLeft = $(this).parent().parent().find(".wrapper");
 						marginLeft = marginLeft.offset().left;
+						if(marginLeft == 0)
+							marginLeft = ".25em";
 						var titleOffset = $(this).offset().top;
 						var marginBottom = $(this).parent().parent().css("margin-bottom").substring(0,2);
 						var endSection = $(this).parent().parent().height() - marginBottom;
-						console.log(marginBottom + " " + endSection);
 						$(this).fadeIn(300).css({
 							"margin-left":marginLeft
 						});

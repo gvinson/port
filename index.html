@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/fonts/fonts.css">
 <link rel="stylesheet" href="css/styles.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <!--[if IE]>
 	<style type="text/css"> 
 		#saying { margin: 1.5em 0;} 
@@ -20,6 +21,7 @@
 <![endif]-->
 <!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 	<style type="text/css">
 		.sectionTitle {
 			font-size: 4em;
@@ -76,13 +78,14 @@
 </div>
 
 <div id="headerWrapper">
-	<div id="dimensions" style="float: right; text-align: right;"></div>
 	<a href="#" id="pull"><img src="img/icons/mobile_nav_off.png" alt="Menu"></a>
 	<header id="header">
 		<div id="logo">
-			Grant Vinson
-			<div id="logoTag">
-			web do-er
+			<div style="display: inline-block;">
+				Grant Vinson
+				<div id="logoTag">
+				web do-er
+				</div>
 			</div>
 		</div>
 		<nav id="topNav" class="clearfix">
@@ -353,18 +356,6 @@
 		</article>
 		
 		<article class="post">
-			<div class="postDate"><div>13</div>05/02</div>
-
-			<div class="contentWrapper">
-			<h2 class="postTitle">This is my first post!</h2>
-			<p class="postContent">
-				Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-			</p>
-			</div>
-			<div class="clear"></div>
-		</article>
-		
-		<article class="post">
 			<div class="dateWrapper">
 				<div class="postDate"><div>13</div>05/02</div>
 			</div>
@@ -432,7 +423,7 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 <script type="text/javascript" src="js/easing.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <!--[if !IE]> -->

@@ -1,10 +1,4 @@
 $(document).ready(function() {
-	
-	ShowDimensions();
-	$(window).resize(function() {
-		ShowDimensions()
-	});
-	
 	var contactShow = false,//if contact window is shown or not
 		modalShow = false, 	//if modal window is shown or not
 		popoverShow = false,//if popover showing or not
@@ -12,7 +6,7 @@ $(document).ready(function() {
 		curVal,				//used for current value for textboxes
 		sectionTitleShow,	//used to show/hide the section titles on scroll
 		timer,
-		clientWidth = document.documentElement.clientWidth;
+		clientWidth = document.documentElement.clientWidth
 		
 	//top nav img hovers
 	if(document.body.clientWidth > 480) {
@@ -45,7 +39,6 @@ $(document).ready(function() {
 	} else {
 		//hide "play with" action, it is to damn long
 		$("#playWith").remove();
-		$(".workTitle:first").css("margin-top","-15.5em");
 	}
 	
 	//Top Navigation Click Functions
@@ -59,17 +52,26 @@ $(document).ready(function() {
 			smoothScroll(goToID);
 		}
 		else {
-			if(!contactShow) {
-				$("#contactWrapper").animate({
-					'top':'0px'
-				}, 300);
-				contactShow = true;
-			}
-			else {
-				$("#contactWrapper").animate({
-					'top':'-320px'
-				}, 200);
-				contactShow = false;
+			if (clientWidth <= 480) {
+				$("#modal_email .modal").css({
+					"width":"75%",
+					"left":"9%",
+					"margin-left":"0"
+				});
+				$("#modal_email").fadeIn('fast');
+			} else {
+				if(!contactShow) {
+					$("#contactWrapper").animate({
+						'top':'0px'
+					}, 300);
+					contactShow = true;
+				}
+				else {
+					$("#contactWrapper").animate({
+						'top':'-320px'
+					}, 200);
+					contactShow = false;
+				}
 			}
 		}
 	});
@@ -78,16 +80,16 @@ $(document).ready(function() {
 	function smoothScroll(target) {
 		target = "#" + target;
 		var targetOffset;
-		if(document.documentElement.clientWidth > 1240) 
+		/*if(clientWidth > 1240) 
 			targetOffset = $(target).offset().top-(document.documentElement.clientHeight*.05);
-		else
-			targetOffset = $(target).offset().top-(document.documentElement.clientHeight*.15);
+		else*/
+			targetOffset = $(target).offset().top-(document.documentElement.clientHeight*.05);
 		$('html, body').animate({scrollTop: targetOffset}, 400);
 	}
 		
 	//Phone number clicked to send a text
 	//Show popover
-	if(document.documentElement.clientWidth > 1240) {
+	if(clientWidth > 1240) {
 		$(".contactLink #phoneNumber").click(function(e) {
 			if(popoverShow) {
 				popoverShow = false;
@@ -116,9 +118,6 @@ $(document).ready(function() {
 			}
 			e.stopPropagation();
 		});
-	}
-	else if (clientWidth <= 480) {
-		$("#modal_email").fadeIn('fast');
 	}
 	else {
 		$(".contactLink #phoneNumber").click(function(e) {
@@ -177,9 +176,6 @@ $(document).ready(function() {
 				});
 				//set timer so it function runs after the topNav has slid back -16em
 				timer = setTimeout(function() {
-					$("#pull").css({
-						"background-color":"#fff",
-					});
 					$("#pull img").attr("src",$("#pull img").attr("src").replace("_on","_off"));
 				}, 155);
 			}
@@ -356,17 +352,18 @@ $(document).ready(function() {
 						"duration":500,
 						"easing":"easeOutQuint"
 					});
-				console.log($(window).scrollTop());
+				var thisWork = $(arrow).parent();
+				$(thisWork).css("padding-bottom","0");
 			}
 		});
 		
 		//Make the close button fixed if the details wrapper is
 		//on the screen
 		if(($(window).scrollTop() <= $(arrow).offset().top)) {
-			$(".closeWork").css("position","fixed");
+			//$(".closeWork").css("position","fixed");
 		}
 		else {
-			$(".closeWork").css("positoin","absolute");
+			//$(".closeWork").css("positoin","absolute");
 		}
 	});
 	
@@ -374,6 +371,7 @@ $(document).ready(function() {
 	$(".workDetailsWrapper .closeWork").click(function() {
 		var scrollTop = $(this).parent().offset().top - 350;
 		$(".workArrow").fadeOut('fast');
+		$(".work").css("padding","3em 0");
 		$(".workDetailsWrapper").fadeOut('fast');
 		$('html, body').animate({scrollTop:scrollTop}, 400);
 		return false;
@@ -382,17 +380,8 @@ $(document).ready(function() {
 	//Mobile nav icon click
 	$("#pull").click(function() {
 		$("#topNav").css("left", "-4em");
-		$("#pull").css({
-			"background-color":"Transparent",
-		});
 		$("#pull img").attr("src",$("#pull img").attr("src").replace("_off","_on"));
 		mobileNavShow = true;
 		window.clearTimeout(timer);
 	});
 });
-
-function ShowDimensions() {
-	var docHeight = document.body.clientHeight,
-		docWidth = document.body.clientWidth;
-	$("#dimensions").text(docWidth + " X " + docHeight + " \"W x H\"");
-}
